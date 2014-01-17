@@ -237,6 +237,8 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String MAGISK_FRAGMENT = "com.android.settings.MagiskManager";
 
+    private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
+
     private String mFragmentClass;
     private String mActivityAction;
 
@@ -1052,6 +1054,12 @@ public class SettingsActivity extends SettingsDrawerActivity
             startActivity(magiskIntent);
             finish();
             return null;
+        } else if (SUPERSU_FRAGMENT.equals(fragmentName)) {
+            Intent superSUIntent = new Intent();
+            superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
+            startActivity(superSUIntent);
+            finish();
+            return null;
         }
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
@@ -1143,6 +1151,16 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.DevelopmentSettingsActivity.class.getName()),
                 showDev, isAdmin, pm);
+
+        // SuperSU
+        boolean suSupported = false;
+        try {
+            suSupported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        setTileEnabled(new ComponentName(packageName,
+                        Settings.SuperSUActivity.class.getName()),
+                suSupported, isAdmin, pm);
 
         // Reveal development-only quick settings tiles
         DevelopmentTiles.setTilesEnabled(this, showDev);
