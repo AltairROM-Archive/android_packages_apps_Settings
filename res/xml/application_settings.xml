@@ -14,10 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/applications_settings_header"
-        android:summary="@string/applications_settings_summary"
-        android:key="applications_settings">
+<PreferenceScreen
+    android:key="applications_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_applications" >
 
     <CheckBoxPreference
             android:key="toggle_install_applications"
@@ -51,6 +52,7 @@
                 android:targetClass="com.android.settings.ManageApplications" />
     </PreferenceScreen>
 
+<!--
     <PreferenceScreen
             android:title="@string/runningservices_settings_title"
             android:summary="@string/runningservices_settings_summary">
@@ -66,23 +68,36 @@
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.applications.StorageUse" />
     </PreferenceScreen>
+-->
 
-    <PreferenceScreen
-            android:key="power_usage"
-            android:title="@string/power_usage_summary_title"
-            android:summary="@string/power_usage_summary">
+    <CheckBoxPreference android:key="pref_move_all_apps"
+        android:title="@string/pref_move_all_apps_title"
+        android:summary="@string/pref_move_all_apps_summary" />
+
+    <ListPreference android:key="pref_install_location"
+        android:dialogTitle="@string/pref_install_location_title"
+        android:title="@string/pref_install_location_title"
+        android:summary="@string/pref_install_location_summary"
+        android:entries="@array/entries_install_location"
+        android:entryValues="@array/values_install_location" />
+
+    <CheckBoxPreference android:key="pref_switch_storage"
+        android:title="@string/pref_switch_storage_title"
+        android:summaryOn="@string/pref_switch_storage_summary_on"
+        android:summaryOff="@string/pref_switch_storage_summary_off" />
+
+    <CheckBoxPreference android:key="enable_permissions_management"
+        android:title="@string/perm_enable_management"
+        android:summary="@string/perm_enable_management_summary" />
+
+    <Preference
+        android:key="phone_goggles_settings"
+        android:title="@string/title_phone_goggles"
+        android:summary="@string/summary_phone_goggles">
         <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.fuelgauge.PowerUsageSummary" />
-    </PreferenceScreen>
+                android:targetClass="com.android.settings.PhoneGogglesActivity" />
+    </Preference>
 
-    <PreferenceScreen 
-            android:title="@string/development_settings_title" 
-            android:summary="@string/development_settings_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.settings"
-                android:targetClass="com.android.settings.DevelopmentSettings" />
-    </PreferenceScreen>
-    
 </PreferenceScreen>
 

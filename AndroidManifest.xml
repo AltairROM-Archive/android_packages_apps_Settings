@@ -8,6 +8,8 @@
     <uses-permission android:name="com.google.android.gm.permission.READ_GMAIL" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -89,6 +91,248 @@
 
 
         <!-- Top-level settings -->
+
+        <activity android:name=".StatusBarSettings"
+            android:label="@string/ui_status_bar_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PerformanceSettings"
+            android:label="@string/performance_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenSettings"
+            android:label="@string/lockscreen_settings_title_head">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenStyleSettings"
+            android:label="@string/pref_lockscreen_stylecfg_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="com.android.settings.SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenWidgetsSettings"
+            android:label="@string/pref_lockscreen_widgets_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenUnlockSettings"
+            android:label="@string/pref_lockscreen_unlock_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenTimeoutSettings"
+            android:label="@string/pref_lockscreen_timeout_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LockscreenGestureSettings"
+            android:label="@string/pref_lockscreen_gesture_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GestureListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GestureCreateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".led.NotificationActivity"
+            android:label="@string/trackball_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".led.NotificationActivity"
+            android:label="@string/trackball_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".led.CategoryActivity"
+            android:label="@string/trackball_category_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".led.PackageSettingsActivity"
+            android:label="@string/group_applications">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".led.AdvancedActivity"
+            android:label="@string/trackball_advanced_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".BacklightActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name=".LightLevelsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".SoundQuietHoursActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".NotificationDrawerSettings"
+            android:label="@string/notification_drawer_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".notification.PowerWidgetActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".notification.PowerWidgetOrderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PerformanceSettings"
+            android:label="@string/performance_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CPUActivity"
+            android:label="@string/cpu_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ButtonSettings"
+            android:label="@string/input_settings_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InputSearchKeyActivity"
+            android:label="@string/input_search_key_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LongPressHomeActivity"
+            android:label="@string/long_press_home_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LongPressMenuActivity"
+            android:label="@string/long_press_menu_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HapticTweaksActivity"
+            android:label="@string/haptic_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".HapticAdjust"
+            android:label="@string/title_haptic_menu">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".TabletTweaksActivity"
+            android:label="@string/tablet_tweaks_title_head">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TabletSoftButtonsActivity"
+            android:label="@string/tablet_tweaks_soft_buttons_list_head">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TabletExtendPmActivity"
+            android:label="@string/tablet_tweaks_extend_pm_list_head">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TabletInputActivity"
+            android:label="@string/tablet_tweaks_input_head">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PhoneGogglesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PhoneGogglesAppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PhoneGogglesDefaultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PhoneGogglesFilterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".WidgetOptionsActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".wifi.WifiSettings"
                 android:label="@string/wifi_settings"
@@ -343,8 +587,8 @@
                 >
         </activity>
 
-        <activity android:name="DockSettings"
-                android:label="@string/dock_settings_title"
+        <activity android:name="InterfaceSettings"
+                android:label="@string/interface_settings_title"
                 android:clearTaskOnLaunch="true"
                 >
             <intent-filter>
@@ -463,6 +707,20 @@
         <activity android:name=".applications.RunningServiceDetails"
                 android:theme="@android:style/Theme.NoTitleBar"
                 android:label="@string/runningservicedetails_settings_title">
+        </activity>
+
+        <activity android:name="LocationSettings"
+                android:label="@string/location_settings_title"
+                android:configChanges="orientation|keyboardHidden"
+                android:clearTaskOnLaunch="true"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.LOCATION_SOURCE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
         </activity>
 
         <activity android:name="SecuritySettings"
@@ -950,5 +1208,35 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
+
+        <receiver android:name=".intents.BootReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".intents.CPUReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".intents.LEDNotificationReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.app.NotificationManager.ACTION_NOTIFY" />
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/widget_name" android:name=".provider.RenderFXWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver>
+        <provider android:name=".provider.SettingsProvider"
+            android:authorities="com.android.settings.provider.Settings" />
+
+        <service android:enabled="true" android:name=".services.RenderFXService" />
+        <service android:enabled="true" android:name=".services.BatteryService" />
     </application>
 </manifest>
+

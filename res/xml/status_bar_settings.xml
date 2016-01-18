@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    android:key="status_bar_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_status_bar" >
+
+	<PreferenceCategory android:title="@string/ui_status_bar_category_clock" />
+
+		<CheckBoxPreference android:key="pref_status_bar_clock"
+			android:title="@string/ui_status_bar_clock_title"
+			android:summary="@string/ui_status_bar_clock_summary"
+			android:defaultValue="true" />
+
+		<ListPreference android:key="pref_status_bar_am_pm"
+			android:dialogTitle="@string/ui_status_bar_am_pm_title"
+			android:title="@string/ui_status_bar_am_pm_title"
+			android:summary="@string/ui_status_bar_am_pm_summary"
+			android:entries="@array/entries_status_bar_am_pm"
+			android:entryValues="@array/values_status_bar_am_pm" />
+
+	<PreferenceCategory android:title="@string/ui_status_bar_category_battery" />
+
+		<ListPreference android:key="pref_status_bar_battery"
+			android:dialogTitle="@string/ui_status_bar_battery_title"
+			android:title="@string/ui_status_bar_battery_title"
+			android:summary="@string/ui_status_bar_battery_summary"
+			android:entries="@array/entries_status_bar_battery"
+			android:entryValues="@array/values_status_bar_battery" />
+
+	<PreferenceCategory android:title="@string/ui_status_bar_category_carrier_label" />
+
+		<CheckBoxPreference android:key="pref_status_bar_compact_carrier"
+			android:title="@string/ui_status_bar_compact_carrier_title"
+			android:summary="@string/ui_status_bar_compact_carrier_summary"
+			android:defaultValue="falses" />
+
+		<ListPreference android:key="pref_status_bar_carrier_label"
+			android:dialogTitle="@string/ui_status_bar_carrier_label_title"
+			android:title="@string/ui_status_bar_carrier_label_title"
+			android:summary="@string/ui_status_bar_carrier_label_summary"
+			android:entries="@array/entries_status_bar_carrier_label"
+			android:entryValues="@array/values_status_bar_carrier_label" />
+
+		<EditTextPreference android:key="pref_status_bar_carrier_label_custom"
+			android:dialogTitle="@string/ui_status_bar_carrier_label_custom_title"
+			android:title="@string/ui_status_bar_carrier_label_custom_title"
+			android:summary="@string/ui_status_bar_carrier_label_custom_summary"
+			android:defaultValue="CyanogenMod 7" />
+
+	<PreferenceCategory android:title="@string/general_title" />
+
+		<ListPreference android:key="pref_status_bar_cm_signal"
+			android:dialogTitle="@string/ui_status_bar_cm_signal_text_title"
+			android:title="@string/ui_status_bar_cm_signal_text_title"
+			android:summary="@string/ui_status_bar_cm_signal_text_summary"
+			android:entries="@array/entries_status_bar_signal"
+			android:entryValues="@array/values_status_bar_signal" />
+
+		<CheckBoxPreference android:key="pref_status_bar_brightness_control"
+			android:title="@string/ui_status_bar_toggle_brightness"
+			android:summary="@string/ui_status_bar_toggle_brightness_summary"
+			android:defaultValue="falses" />
+
+		<CheckBoxPreference android:key="pref_status_bar_headset"
+			android:title="@string/ui_status_bar_headset_title"
+			android:summary="@string/ui_status_bar_headset_summary"
+			android:defaultValue="true" />
+
+</PreferenceScreen>
+

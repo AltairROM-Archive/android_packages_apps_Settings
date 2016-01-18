@@ -14,8 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/about_settings">
+<PreferenceScreen
+    android:key="device_info_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_about" >
 
         <!-- Additional System Update menu -->
         <PreferenceScreen android:key="additional_system_update_settings"
@@ -33,15 +36,6 @@
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.android.settings"
                     android:targetClass="com.android.settings.deviceinfo.Status" />
-        </PreferenceScreen>
-
-        <PreferenceScreen
-                android:key="power_usage"
-                android:title="@string/power_usage_summary_title"
-                android:summary="@string/power_usage_summary">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.fuelgauge.PowerUsageSummary" />
         </PreferenceScreen>
 
         <!-- Legal Information -->
@@ -111,6 +105,12 @@
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Mod version -->
+        <Preference android:key="mod_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mod_version"
+                android:summary="@string/mod_version_default" />
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 style="?android:preferenceInformationStyle"
@@ -141,12 +141,6 @@
                 android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Mod version -->
-        <Preference android:key="mod_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mod_version"
-                android:summary="@string/mod_version_default" />
-
         <!-- Build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
@@ -160,3 +154,4 @@
                 android:summary="@string/device_info_default"/>
 
 </PreferenceScreen>
+

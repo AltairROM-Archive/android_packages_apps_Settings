@@ -14,8 +14,12 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/date_and_time">
+<PreferenceScreen
+    android:key="date_time_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_date_time" >
+
     <CheckBoxPreference android:key="auto_time" 
         android:title="@string/date_time_auto"
         android:summaryOn="@string/date_time_auto_summaryOn"
@@ -42,3 +46,4 @@
         android:title="@string/date_time_date_format" 
         android:summary="mm/dd/yyyy"/>
 </PreferenceScreen>
+

@@ -14,7 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    android:key="wireless_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_more" >
 
     <CheckBoxPreference
         android:key="toggle_airplane"
@@ -22,23 +26,6 @@
         android:summary="@string/airplane_mode_summary"
         android:persistent="false"
         android:disableDependentsState="true" />
-
-    <!-- Programmatically will have dynamic summary, but we provide the fallback summary. -->
-    <CheckBoxPreference
-        android:key="toggle_wifi"
-        android:title="@string/wifi_quick_toggle_title"
-        android:summary="@string/wifi_quick_toggle_summary"
-        android:persistent="false" />
-
-    <PreferenceScreen
-        android:key="wifi_settings"
-        android:title="@string/wifi_settings"
-        android:summary="@string/wifi_settings_summary" >
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.settings"
-            android:targetClass="com.android.settings.wifi.WifiSettings" />
-    </PreferenceScreen>
 
     <PreferenceScreen
         android:key="wimax_settings"
@@ -48,22 +35,6 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.settings.wimax"
             android:targetClass="com.android.settings.wimax.WimaxSettings" />
-    </PreferenceScreen>
-
-    <CheckBoxPreference
-        android:key="toggle_bluetooth"
-        android:title="@string/bluetooth_quick_toggle_title"
-        android:summary="@string/bluetooth_quick_toggle_summary"
-        android:persistent="false" />
-
-    <PreferenceScreen
-        android:key="bt_settings"
-        android:title="@string/bluetooth_settings_title"
-        android:summary="@string/bluetooth_settings_summary">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.android.settings"
-            android:targetClass="com.android.settings.bluetooth.BluetoothSettings" />
     </PreferenceScreen>
 
     <PreferenceScreen
@@ -93,13 +64,13 @@
         android:persistent="false" />
 
     <PreferenceScreen
-        android:title="@string/network_settings_title"
-        android:summary="@string/network_settings_summary"
-        android:dependency="toggle_airplane">
+        android:key="call_settings"
+        android:title="@string/call_settings_title">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.phone"
-            android:targetClass="com.android.phone.Settings" />
+            android:targetClass="com.android.phone.CallFeaturesSetting" />
     </PreferenceScreen>
 
 </PreferenceScreen>
+

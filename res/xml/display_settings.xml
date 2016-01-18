@@ -14,26 +14,22 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/display_settings"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen
+    android:key="display_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_display" >
 
+    <PreferenceCategory android:key="general_category"
+        android:title="@string/general_title" />
+
+        <!-- Brightness -->
         <com.android.settings.BrightnessPreference
                 android:key="brightness"
                 android:title="@string/brightness"
                 android:dialogTitle="@string/brightness" />
 
-        <CheckBoxPreference
-            android:key="accelerometer"
-            android:title="@string/accelerometer_title"/>
-
-        <ListPreference
-            android:key="animations"
-            android:title="@string/animations_title"
-            android:persistent="false"
-            android:entries="@array/animations_entries"
-            android:entryValues="@array/animations_values" />
-
+        <!-- Screen timeout -->
         <ListPreference
                 android:key="screen_timeout"
                 android:title="@string/screen_timeout"
@@ -41,4 +37,74 @@
                 android:persistent="false"
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
+
+        <!-- Backlight -->
+        <PreferenceScreen android:key="backlight_settings"
+            android:title="@string/backlight_title" android:summary="@string/backlight_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.BacklightActivity" />
+        </PreferenceScreen>
+
+        <!-- LED notifications -->
+		<PreferenceScreen android:key="trackball_notifications"
+			android:title="@string/trackball_title" android:summary="@string/trackball_summary">
+			<intent android:action="android.intent.action.MAIN"
+				android:targetPackage="com.android.settings"
+				android:targetClass="com.android.settings.led.NotificationActivity" />
+		</PreferenceScreen>
+
+		<!-- Render effect -->
+		<ListPreference android:key="pref_render_effect"
+			android:dialogTitle="@string/pref_render_effect_title" android:title="@string/pref_render_effect_title"
+			android:summary="@string/pref_render_effect_summary" android:entries="@array/entries_render_effect"
+			android:entryValues="@array/values_render_effect" />
+
+    <!-- Animations -->
+    <PreferenceCategory android:title="@string/animations_title" />
+
+        <!-- Animation -->
+        <ListPreference
+            android:key="animations"
+            android:title="@string/animations_title"
+            android:persistent="false"
+            android:entries="@array/animations_entries"
+            android:entryValues="@array/animations_values" />
+
+        <!-- Screen on animation -->
+        <CheckBoxPreference android:key="electron_beam_animation_on"
+            android:title="@string/pref_electron_beam_animation_on" />
+
+        <!-- Screen off animation -->
+        <CheckBoxPreference android:key="electron_beam_animation_off"
+            android:title="@string/pref_electron_beam_animation_off" />
+
+        <!-- Rotation animation -->
+        <CheckBoxPreference android:key="pref_rotation_animation"
+            android:title="@string/pref_rotation_animation_title"
+            android:summary="@string/pref_rotation_animation_summary" />
+
+    <!-- Rotation -->
+    <PreferenceCategory android:title="@string/rotation_category_title" />
+
+        <!-- Auto-rotate screen -->
+        <CheckBoxPreference
+            android:key="accelerometer"
+            android:title="@string/accelerometer_title" />
+
+        <!-- Rotation degrees -->
+        <CheckBoxPreference android:key="pref_rotation_0"
+            android:dependency="accelerometer"
+            android:title="@string/pref_rotation_0_title" />
+        <CheckBoxPreference android:key="pref_rotation_90"
+            android:dependency="accelerometer"
+            android:title="@string/pref_rotation_90_title" />
+        <CheckBoxPreference android:key="pref_rotation_180"
+            android:dependency="accelerometer"
+            android:title="@string/pref_rotation_180_title" />
+        <CheckBoxPreference android:key="pref_rotation_270"
+            android:dependency="accelerometer"
+            android:title="@string/pref_rotation_270_title" />
+
 </PreferenceScreen>
+

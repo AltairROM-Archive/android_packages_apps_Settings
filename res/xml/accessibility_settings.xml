@@ -14,8 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen
+    android:key="accessibility_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_accessibility" >
 
     <CheckBoxPreference
             android:key="toggle_accessibility_service_checkbox"
@@ -35,3 +38,4 @@
     </PreferenceCategory>
 
 </PreferenceScreen>
+

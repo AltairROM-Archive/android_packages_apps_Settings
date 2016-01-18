@@ -62,8 +62,6 @@ import com.authentec.AuthentecHelper;
  */
 public class SecuritySettings extends PreferenceActivity implements OnPreferenceChangeListener {
 
-    public static final String GPS_STATUS_CHANGED="com.android.settings.GPS_STATUS_CHANGED";
-
     private static final String KEY_UNLOCK_SET_OR_CHANGE = "unlock_set_or_change";
 
     // Lock Settings
@@ -87,10 +85,6 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
 
     private CheckBoxPreference mShowPassword;
 
-    // Location Settings
-    private static final String LOCATION_NETWORK = "location_network";
-    private static final String LOCATION_GPS = "location_gps";
-    private static final String ASSISTED_GPS = "assisted_gps";
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int TSM_RESULT = 195;
 
@@ -100,16 +94,11 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
     // Encrypted file system
     private  CheckBoxPreference mEncryptedFSEnabled;
 
-    private CheckBoxPreference mNetwork;
-    private CheckBoxPreference mGps;
-    private CheckBoxPreference mAssistedGps;
-
     DevicePolicyManager mDPM;
 
     // These provide support for receiving notification when Location Manager settings change.
     // This is necessary because the Network Location Provider can change settings
     // if the user does not confirm enabling the provider.
-    private ContentQueryMap mContentQueryMap;
     private ChooseLockSettingsHelper mChooseLockSettingsHelper;
     private LockPatternUtils mLockPatternUtils;
     private final class SettingsObserver implements Observer {
@@ -131,67 +120,10 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
         createPreferenceHierarchy();
 
         updateToggles();
-
-        //add BT gps devices
-        ListPreference btpref = (ListPreference) findPreference("location_gps_source");
-        ArrayList<CharSequence> entries = new ArrayList<CharSequence>();
-        for (String e : getResources().getStringArray(R.array.location_entries_gps_source) ) {
-            entries.add(e);
-        }
-        ArrayList<CharSequence> values = new ArrayList<CharSequence>();
-        for (String v: getResources().getStringArray(R.array.location_values_gps_source)) {
-            values.add(v);
-        }
-        // add known bonded BT devices
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        if ((mBluetoothAdapter != null) && (mBluetoothAdapter.isEnabled())) {
-            for (BluetoothDevice d : mBluetoothAdapter.getBondedDevices()) {
-                String dname = d.getName() + " - " + d.getAddress();
-                entries.add(dname);
-                values.add(d.getAddress());
-            }
-        }
-        btpref.setEntries(entries.toArray(new CharSequence[entries.size()]));
-        btpref.setEntryValues(values.toArray(new CharSequence[values.size()]));
-        btpref.setDefaultValue("0");
-        btpref.setOnPreferenceChangeListener(this);
-
-        
-        // listen for Location Manager settings changes
-        Cursor settingsCursor = getContentResolver().query(Settings.Secure.CONTENT_URI, null,
-                "(" + Settings.System.NAME + "=?)",
-                new String[]{Settings.Secure.LOCATION_PROVIDERS_ALLOWED},
-                null);
-        mContentQueryMap = new ContentQueryMap(settingsCursor, Settings.System.NAME, true, null);
-        mContentQueryMap.addObserver(new SettingsObserver());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        String oldPref = Settings.System.getString(getContentResolver(),
-                Settings.Secure.EXTERNAL_GPS_BT_DEVICE);
-        String newPref = newValue == null ? "0" : (String) newValue;
-        // "0" represents the internal GPS.
-        Settings.System.putString(getContentResolver(), Settings.Secure.EXTERNAL_GPS_BT_DEVICE,
-                newPref);
-        if (!oldPref.equals(newPref) && ("0".equals(oldPref) || "0".equals(newPref)) ) {
-            LocationManager locationManager = 
-                (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-            locationManager.setGPSSource(newPref);
-
-            // Show dialog to inform user that source has been switched
-            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle(R.string.location_gps_source_notification_title);
-            alertDialog.setMessage(getResources().getString(R.string.location_gps_source_notification));
-            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
-                    getResources().getString(com.android.internal.R.string.ok),
-                    new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    return;
-                }
-            });
-            alertDialog.show();
-        }
         return true;
     }
 
@@ -203,10 +135,6 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
         }
         addPreferencesFromResource(R.xml.security_settings);
         root = this.getPreferenceScreen();
-
-        mNetwork = (CheckBoxPreference) getPreferenceScreen().findPreference(LOCATION_NETWORK);
-        mGps = (CheckBoxPreference) getPreferenceScreen().findPreference(LOCATION_GPS);
-        mAssistedGps = (CheckBoxPreference) getPreferenceScreen().findPreference(ASSISTED_GPS);
 
         PreferenceManager pm = getPreferenceManager();
 
@@ -357,24 +285,6 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
         }else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);
-        } else if (preference == mNetwork) {
-            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-                    LocationManager.NETWORK_PROVIDER, mNetwork.isChecked());
-        } else if (preference == mGps) {
-            boolean enabled = mGps.isChecked();
-            Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-                    LocationManager.GPS_PROVIDER, enabled);
-
-            //{PIAF - Send update of GPS status
-            Intent gpsStatus = new Intent(GPS_STATUS_CHANGED);
-            this.sendBroadcast(gpsStatus);
-            //PIAF}
-            if (mAssistedGps != null) {
-                mAssistedGps.setEnabled(enabled);
-            }
-        } else if (preference == mAssistedGps) {
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.ASSISTED_GPS_ENABLED,
-                    mAssistedGps.isChecked() ? 1 : 0);
         }
 
         return false;
@@ -384,17 +294,6 @@ public class SecuritySettings extends PreferenceActivity implements OnPreference
      * Creates toggles for each available location provider
      */
     private void updateToggles() {
-        ContentResolver res = getContentResolver();
-        boolean gpsEnabled = Settings.Secure.isLocationProviderEnabled(
-                res, LocationManager.GPS_PROVIDER);
-        mNetwork.setChecked(Settings.Secure.isLocationProviderEnabled(
-                res, LocationManager.NETWORK_PROVIDER));
-        mGps.setChecked(gpsEnabled);
-        if (mAssistedGps != null) {
-            mAssistedGps.setChecked(Settings.Secure.getInt(res,
-                    Settings.Secure.ASSISTED_GPS_ENABLED, 2) == 1);
-            mAssistedGps.setEnabled(gpsEnabled);
-        }
     }
 
     private boolean isToggled(Preference pref) {

@@ -17,7 +17,7 @@
 package com.android.settings.widget;
 
 import com.android.settings.R;
-import com.android.settings.SecuritySettings;
+import com.android.settings.LocationSettings;
 import com.android.settings.widget.buttons.AirplaneButton;
 import com.android.settings.widget.buttons.AutoRotateButton;
 import com.android.settings.widget.buttons.BluetoothButton;
@@ -376,7 +376,7 @@ public class SettingsAppWidgetProvider extends AppWidgetProvider {
             logD("Received mobile data mode state change");
             MobileDataButton.getInstance().onReceive(context, intent);
         } else if (Intent.ACTION_USER_PRESENT.equals(intent.getAction())
-                || SecuritySettings.GPS_STATUS_CHANGED.equals(intent.getAction())) {
+                || LocationSettings.GPS_STATUS_CHANGED.equals(intent.getAction())) {
         } else {
             logD("Ignoring Action: " + intent.getAction());
             // Don't fall-through to updating the widget. The Intent

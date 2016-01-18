@@ -14,8 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<PreferenceScreen
+    android:key="language_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_language" >
 
     <PreferenceCategory android:key="language_settings_category"
             android:title="@string/language_settings_category" />
@@ -48,4 +51,28 @@
                 android:targetClass="com.android.settings.PhysicalKeyboardSettings"/>
     </PreferenceScreen>
 
+    <PreferenceCategory android:key="voice_input_category"
+            android:title="@string/voice_input_category" />
+    
+    <!-- entries, entryValues, and defaultValue will be populated programmatically. -->
+    <ListPreference
+            android:key="recognizer"
+            android:title="@string/recognizer_title"
+            android:dialogTitle="@string/recognizer_title" />
+
+    <!-- An intent for this preference will be populated programmatically. -->
+    <PreferenceScreen android:key="recognizer_settings"
+            android:title="@string/recognizer_settings_title" />
+
+    <PreferenceCategory android:key="voice_output_category"
+            android:title="@string/voice_output_category" />
+
+    <PreferenceScreen android:key="tts_settings"
+            android:title="@string/tts_settings_title">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.android.settings.TextToSpeechSettings" />
+    </PreferenceScreen>
+
 </PreferenceScreen>
+

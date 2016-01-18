@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    android:key="lockscreen_settings"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/settings_title_lockscreen" >
+
+    <CheckBoxPreference android:key="pref_disable_lockscreen"
+        android:title="@string/tablet_tweaks_disable_lockscreen_title"
+        android:summary="@string/tablet_tweaks_disable_lockscreen_summary" />
+
+    <PreferenceScreen android:key="pref_lockscreen_stylecfg"
+        android:title="@string/pref_lockscreen_stylecfg_title"
+        android:summary="@string/pref_lockscreen_stylecfg_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.LockscreenStyleSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen android:key="pref_lockscreen_widgets"
+        android:title="@string/pref_lockscreen_widgets_title"
+        android:summary="@string/pref_lockscreen_widgets_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.LockscreenWidgetsSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen android:key="pref_lockscreen_unlock"
+        android:title="@string/pref_lockscreen_unlock_title"
+        android:summary="@string/pref_lockscreen_unlock_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.LockscreenUnlockSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen android:key="pref_lockscreen_gestures"
+        android:title="@string/pref_lockscreen_gesture_title"
+        android:summary="@string/pref_lockscreen_gesture_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.LockscreenGestureSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen android:key="pref_lockscreen_timeout"
+        android:title="@string/pref_lockscreen_timeout_title"
+        android:summary="@string/pref_lockscreen_timeout_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.LockscreenTimeoutSettings" />
+    </PreferenceScreen>
+
+</PreferenceScreen>
+

@@ -16,7 +16,6 @@
 
 package com.android.settings;
 
-import android.net.sip.SipManager;
 import android.os.Bundle;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -30,7 +29,6 @@ import android.content.pm.PackageManager;
 public class Settings extends PreferenceActivity {
 
     private static final String KEY_PARENT = "parent";
-    private static final String KEY_CALL_SETTINGS = "call_settings";
     private static final String KEY_SYNC_SETTINGS = "sync_settings";
     private static final String KEY_DOCK_SETTINGS = "dock_settings";
     private static final String KEY_DEVICE_SETTINGS = "device_settings";
@@ -62,9 +60,6 @@ public class Settings extends PreferenceActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        findPreference(KEY_CALL_SETTINGS).setEnabled(
-                !AirplaneModeEnabler.isAirplaneModeOn(this)
-                || SipManager.isVoipSupported(this));
 
         Intent intent = new Intent();
         intent.setAction("android.intent.action.MAIN");
