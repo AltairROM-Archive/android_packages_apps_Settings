@@ -3294,8 +3294,8 @@ found in the list of installed applications.</string>
     <string name="ui_status_bar_clock_summary">Status bar clock will be hidden, if disabled</string>
     <string name="ui_status_bar_battery_title">Battery status style</string>
     <string name="ui_status_bar_battery_summary">Display style of battery status</string>
-    <string name="ui_status_bar_compact_carrier_title">Compact carrier label</string>
-    <string name="ui_status_bar_compact_carrier_summary">Use alternate notification dropdown layout with mini carrier label</string>
+    <string name="ui_status_bar_compact_carrier_title">Hide carrier label</string>
+    <string name="ui_status_bar_compact_carrier_summary">Do not display carrier label in notification dropdown</string>
     <string name="ui_status_bar_carrier_label_title">Carrier label type</string>
     <string name="ui_status_bar_carrier_label_summary">Change what is used as carrier label</string>
     <string name="ui_status_bar_carrier_label_use_default">Default</string>
