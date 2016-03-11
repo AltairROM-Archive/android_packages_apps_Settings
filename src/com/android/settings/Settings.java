@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
@@ -32,6 +33,7 @@ public class Settings extends PreferenceActivity {
     private static final String KEY_SYNC_SETTINGS = "sync_settings";
     private static final String KEY_DOCK_SETTINGS = "dock_settings";
     private static final String KEY_DEVICE_SETTINGS = "device_settings";
+    private static final String KEY_SUPERSU = "supersu_settings";
     
     private static final String KEY_LAUNCHER = "launcher_settings";
 
@@ -54,6 +56,16 @@ public class Settings extends PreferenceActivity {
         Preference dockSettings = parent.findPreference(KEY_DOCK_SETTINGS);
         if (getResources().getBoolean(R.bool.has_dock_settings) == false && dockSettings != null) {
             parent.removePreference(dockSettings);
+        }
+
+        boolean supported = false;
+        try {
+            supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        if (!supported) {
+            Preference superSU = parent.findPreference(KEY_SUPERSU);
+            parent.removePreference(superSU);
         }
     }
 

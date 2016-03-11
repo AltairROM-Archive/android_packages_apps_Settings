@@ -48,6 +48,7 @@
     <string name="settings_title_language">Language &amp; input</string>
     <string name="settings_title_performance">Performance</string>
     <string name="settings_title_development">Developer options</string>
+    <string name="settings_title_supersu">SuperSU</string>
     <string name="settings_title_about">About</string>
 
     <!-- Device Info --> <skip />

@@ -293,6 +293,18 @@
                     android:targetClass="com.android.settings.DevelopmentSettings" />
         </com.android.settings.IconPreferenceScreen>
 
+        <!-- SuperSU -->
+        <com.android.settings.IconPreferenceScreen
+                android:id="@+id/supersu_settings"
+                android:key="supersu_settings"
+                android:title="@string/settings_title_supersu"
+                settings:icon="@drawable/ic_settings_supersu">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="eu.chainfire.supersu"
+                android:targetClass="eu.chainfire.supersu.MainActivity" />
+        </com.android.settings.IconPreferenceScreen>
+
         <!-- About Device -->
         <com.android.settings.IconPreferenceScreen
                 android:title="@string/settings_title_about"
