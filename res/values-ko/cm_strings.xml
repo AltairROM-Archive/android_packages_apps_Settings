@@ -40,7 +40,7 @@
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">NFC</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod 버전</string>
+  <string name="mod_version">ROM 버전</string>
   <string name="mod_version_default">알 수 없음</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">장치 모델</string>

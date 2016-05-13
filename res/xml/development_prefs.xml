@@ -27,15 +27,11 @@
                 android:targetClass="com.android.development.Development" />
     </PreferenceScreen>
 
-    <com.android.settings.BugreportPreference
-            android:key="bugreport"
-            android:title="@*android:string/bugreport_title"
-            android:dialogTitle="@*android:string/bugreport_title" />
-
     <SwitchPreference
         android:key="advanced_reboot"
         android:title="@string/advanced_reboot_title"
-        android:summary="@string/advanced_reboot_summary" />
+        android:summary="@string/advanced_reboot_summary"
+        android:defaultValue="1" />
 
     <PreferenceScreen
             android:key="local_backup_password"
@@ -85,11 +81,6 @@
         android:persistent="false"
         android:entries="@array/root_access_entries"
         android:entryValues="@array/root_access_values" />
-
-    <SwitchPreference
-        android:key="update_recovery"
-        android:title="@string/update_recovery_title"
-        android:summary="@string/update_recovery_summary" />
 
     <com.android.settings.ColorModePreference
         android:key="color_mode"
@@ -141,11 +132,6 @@
             android:key="enable_terminal"
             android:title="@string/enable_terminal_title"
             android:summary="@string/enable_terminal_summary" />
-
-        <SwitchPreference
-            android:key="bugreport_in_power"
-            android:title="@string/bugreport_in_power"
-            android:summary="@string/bugreport_in_power_summary"/>
 
         <PreferenceScreen android:key="mock_location_app"
             android:title="@string/mock_location_app" />

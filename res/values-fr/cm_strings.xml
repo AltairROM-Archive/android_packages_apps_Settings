@@ -42,7 +42,7 @@ Vous êtes maintenant à <xliff:g id="step_count">%1$d</xliff:g> étapes de l\'a
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">NFC</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">Version CyanogenMod</string>
+  <string name="mod_version">Version ROM</string>
   <string name="mod_version_default">Inconnue</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">Modèle de l\'appareil</string>

@@ -40,7 +40,7 @@
   <string name="root_access_all">Apps and ADB</string>
   <!-- NFC PreferenceCategory title -->
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod version</string>
+  <string name="mod_version">ROM version</string>
   <string name="mod_version_default">Unknown</string>
   <!-- About phone screen, Device model -->
   <!-- About phone screen, Device name -->

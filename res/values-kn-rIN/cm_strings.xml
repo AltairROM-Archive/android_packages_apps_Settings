@@ -41,7 +41,7 @@
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">ಎನ್ಎಫ್‍ಸಿ</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod ಆವೃತ್ತಿ</string>
+  <string name="mod_version">ROM ಆವೃತ್ತಿ</string>
   <string name="mod_version_default">ಅಜ್ಞಾತ</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">ಸಾಧನ ಮಾದರಿ</string>

@@ -32,7 +32,7 @@
   <string name="root_access_all">應用程式和 ADB</string>
   <!-- NFC PreferenceCategory title -->
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod 版本</string>
+  <string name="mod_version">ROM 版本</string>
   <string name="mod_version_default">不明</string>
   <!-- About phone screen, Device model -->
   <!-- About phone screen, Device name -->

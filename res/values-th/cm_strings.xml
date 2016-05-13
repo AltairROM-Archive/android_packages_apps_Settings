@@ -40,7 +40,7 @@
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">NFC</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">รุ่นของ CyanogenMod</string>
+  <string name="mod_version">รุ่นของ ROM</string>
   <string name="mod_version_default">ไม่รู้จัก</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">รุ่นอุปกรณ์</string>

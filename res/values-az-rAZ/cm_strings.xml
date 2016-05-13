@@ -39,7 +39,7 @@
   <string name="root_access_all">Tətbiqetmələr və ADB</string>
   <!-- NFC PreferenceCategory title -->
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod versiyası</string>
+  <string name="mod_version">ROM versiyası</string>
   <string name="mod_version_default">Bilinməyən</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">Cihaz modeli</string>

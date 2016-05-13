@@ -913,18 +913,6 @@
                 android:value="true" />
         </activity>
 
-        <activity android:name="SettingsLicenseActivity"
-                android:label="@string/settings_license_activity_title"
-                android:theme="@style/Theme.SettingsLicenseActivity"
-                android:configChanges="orientation|screenSize">
-            <intent-filter android:priority="1">
-                <action android:name="android.settings.LICENSE" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
-                android:value="true" />
-        </activity>
-
         <activity android:name="Settings$ManageApplicationsActivity"
                 android:label="@string/applications_settings"
                 android:taskAffinity="">
@@ -2314,20 +2302,6 @@
                        android:resource="@id/security_settings" />
         </activity-alias>
 
-        <activity android:name="Settings$ContributorsCloudActivity"
-                android:label="@string/contributors_cloud_fragment_title"
-                android:windowSoftInputMode="stateHidden|adjustNothing"
-                android:taskAffinity=""
-                android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.settings.CONTRIBUTORS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.contributors.ContributorsCloudFragment" />
-        </activity>
-
         <!-- CyanogenMod activities End -->
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
@@ -2694,26 +2668,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />$
             </intent-filter>$
         </receiver>
-
-        <!-- Anonymous Statistics -->
-        <receiver android:name=".cmstats.ReportingServiceManager"
-            android:enabled="true"
-            android:exported="false"
-            android:label="ReportingServiceManager">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.android.settings.action.TRIGGER_REPORT_METRICS" />
-            </intent-filter>
-        </receiver>
-
-        <service android:label="ReportingService"
-            android:enabled="true"
-            android:exported="false"
-            android:name=".cmstats.ReportingService">
-        </service>
-
-        <service android:name=".cmstats.StatsUploadJobService"
-                 android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
         <receiver android:name=".users.ProfileUpdateReceiver">

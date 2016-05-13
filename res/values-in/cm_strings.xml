@@ -40,7 +40,7 @@
   <!-- NFC PreferenceCategory title -->
   <string name="nfc_title_category">Komunikasi jarak dekat</string>
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">Versi CyanogenMod</string>
+  <string name="mod_version">Versi ROM</string>
   <string name="mod_version_default">Tidak diketahui</string>
   <!-- About phone screen, Device model -->
   <string name="device_model">Modusl perangkat</string>

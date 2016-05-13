@@ -32,7 +32,7 @@
   <string name="root_access_all">Lietotnēm un ADB</string>
   <!-- NFC PreferenceCategory title -->
   <!-- About phone screen, CyanogenMod version -->
-  <string name="mod_version">CyanogenMod versija</string>
+  <string name="mod_version">ROM versija</string>
   <string name="mod_version_default">Nezināms</string>
   <!-- About phone screen, Device model -->
   <!-- About phone screen, Device name -->
