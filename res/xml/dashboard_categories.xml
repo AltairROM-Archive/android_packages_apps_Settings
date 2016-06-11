@@ -144,6 +144,14 @@
                 <extra android:name="filter_type" android:value="0" />
         </dashboard-tile>
 
+        <!-- Navigation bar -->
+        <dashboard-tile
+                android:id="@+id/navbar"
+                android:title="@string/navbar_category"
+                android:fragment="com.android.settings.dui.Navbar"
+                android:icon="@drawable/ic_settings_navbar"
+                />
+
         <!-- Buttons -->
         <dashboard-tile
                 android:id="@+id/button_settings"
