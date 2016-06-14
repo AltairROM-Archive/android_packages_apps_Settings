@@ -15,6 +15,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General strings -->
+    <string name="default_string">Default</string>
+    <string name="reset">Reset</string>
+
     <!-- Settings -->    
     <string name="personalization_settings_title">Personalization</string>
 
@@ -25,5 +29,48 @@
 
     <!-- Personalization | Status Bar | Clock -->
     <string name="status_bar_clock_category_time">Time settings</string>
+    <string name="status_bar_clock_category_date">Date settings</string>
+    <string name="status_bar_clock_category_style">Style</string>
+
+    <string name="status_bar_clock_font_style_title">Font style</string>
+    <string name="status_bar_clock_font_bold">Bold</string>
+    <string name="status_bar_clock_font_condensed">Condensed</string>
+    <string name="status_bar_clock_font_light">Light</string>
+    <string name="status_bar_clock_font_light_italic">Light italic</string>
+    <string name="status_bar_clock_font_normal">Normal</string>
+
+    <string name="status_bar_clock_show_seconds_title">Show seconds in clock</string>
+
+    <string name="status_bar_clock_date_display_title">Show date in clock</string>
+    <string name="status_bar_clock_date_display_summary">Display custom date before the clock</string>
+    <string name="status_bar_clock_date_display_none">Disabled</string>
+    <string name="status_bar_clock_date_display_small">Small font size</string>
+    <string name="status_bar_clock_date_display_normal">Normal font size</string>
+
+    <string name="status_bar_clock_date_style_title">Date style</string>
+    <string name="status_bar_clock_date_style_normal">Normal</string>
+    <string name="status_bar_clock_date_style_lowercase">Lowercase</string>
+    <string name="status_bar_clock_date_style_uppercase">Uppercase</string>
+
+    <string name="status_bar_clock_date_format_title">Date format</string>
+    <string name="status_bar_clock_date_format_custom">Custom Java format</string>
+    <string name="status_bar_clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="status_bar_clock_date_string_edittext_summary">Enter string</string>
+
+    <string name="status_bar_clock_use_custom_color_title">Clock color</string>
+    <string name="status_bar_clock_use_custom_color_summary_on">Use custom color</string>
+    <string name="status_bar_clock_use_custom_color_summary_off">Use current theme color</string>
+    <string name="status_bar_clock_custom_color_title">Text color</string>
+    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
+
+    <!-- Personalization | Status Bar | Battery -->
+    <string name="status_bar_battery_category_color">Color settings</string>
+
+    <string name="status_bar_battery_use_custom_colors_title">Battery colors</string>
+    <string name="status_bar_battery_use_custom_colors_summary_on">Use custom colors</string>
+    <string name="status_bar_battery_use_custom_colors_summary_off">Use current theme colors</string>
+    <string name="status_bar_battery_custom_color_charge_title">Fill color</string>
+    <string name="status_bar_battery_custom_color_bolt_title">Charging bolt color</string>
+    <string name="status_bar_battery_custom_color_text_title">Text color</string>
 </resources>
 

@@ -33,5 +33,34 @@
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
 
+    <PreferenceCategory
+        android:title="@string/status_bar_battery_category_color">
+
+        <SwitchPreference
+            android:key="status_bar_battery_use_custom_colors"
+            android:title="@string/status_bar_battery_use_custom_colors_title"
+            android:summaryOn="@string/status_bar_battery_use_custom_colors_summary_on"
+            android:summaryOff="@string/status_bar_battery_use_custom_colors_summary_off" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_battery_custom_color_charge"
+            android:dependency="status_bar_battery_use_custom_colors"
+            android:title="@string/status_bar_battery_custom_color_charge_title"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_battery_custom_color_bolt"
+            android:dependency="status_bar_battery_use_custom_colors"
+            android:title="@string/status_bar_battery_custom_color_bolt_title"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_battery_custom_color_text"
+            android:dependency="status_bar_battery_use_custom_colors"
+            android:title="@string/status_bar_battery_custom_color_text_title"
+            android:defaultValue="0xffffffff" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
 
