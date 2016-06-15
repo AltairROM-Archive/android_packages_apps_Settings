@@ -21,6 +21,7 @@
 
     <!-- Settings -->    
     <string name="personalization_settings_title">Personalization</string>
+    <string name="supersu_title">SuperSU</string>
 
     <!-- Personalization | Status Bar -->
     <string name="status_bar_category_clock">Clock</string>

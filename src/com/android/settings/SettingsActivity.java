@@ -302,6 +302,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.privacy_settings_cyanogenmod,
+            R.id.supersu_settings
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1347,6 +1348,16 @@ public class SettingsActivity extends Activity
 
                     if (!getPackageManager().hasSystemFeature(
                             CMContextConstants.Features.WEATHER_SERVICES) || !showWeatherMenu) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.supersu_settings) {
+                    // Embedding into Settings is supported from SuperSU v1.85 and up
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
                         removeTile = true;
                     }
                 }
