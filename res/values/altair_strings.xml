@@ -27,6 +27,12 @@
     <string name="status_bar_category_clock">Clock</string>
     <string name="status_bar_category_battery">Battery status</string>
     <string name="status_bar_category_miscellaneous">Miscellaneous</string>
+    <string name="status_bar_category_quick_settings">Quick Settings</string>
+
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+    <string name="qs_num_rows_title">Number of rows</string>
+    <string name="qs_num_rows_showing">%1$s rows are shown</string>
 
     <!-- Personalization | Status Bar | Clock -->
     <string name="status_bar_clock_category_time">Time settings</string>
