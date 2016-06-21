@@ -26,6 +26,14 @@
             android:icon="@drawable/ic_settings_buttons"
             />
 
+    <!-- Miscellaneous -->
+    <PreferenceScreen
+            android:id="@+id/misc_settings"
+            android:title="@string/misc_settings_category"
+            android:fragment="com.android.settings.altair.Miscellaneous"
+            android:icon="@drawable/ic_settings_misc"
+            />
+
     <!-- Navigation bar -->
     <PreferenceScreen
             android:id="@+id/navbar"

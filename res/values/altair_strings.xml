@@ -23,6 +23,13 @@
     <string name="personalization_settings_title">Personalization</string>
     <string name="supersu_title">SuperSU</string>
 
+    <!-- Personalization | Miscellaneous -->
+    <string name="misc_settings_category">Miscellaneous</string>
+    <string name="misc_settings_toast_category">Toast</string>
+
+    <string name="misc_settings_toast_icon_title">Toast icon</string>
+    <string name="misc_settings_toast_icon_summary">Display the app icon corresponding with the toast</string>
+
     <!-- Personalization | Status Bar -->
     <string name="status_bar_category_clock">Clock</string>
     <string name="status_bar_category_battery">Battery status</string>
