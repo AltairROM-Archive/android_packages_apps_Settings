@@ -46,6 +46,13 @@
                 android:summary="@string/live_display_summary"
                 android:fragment="com.android.settings.livedisplay.LiveDisplay" />
 
+        <!-- Lockscreen wallpaper -->
+        <PreferenceScreen
+                android:key="lockscreen_settings"
+                android:title="@string/lockscreen_settings_title"
+                android:persistent="false"
+                android:fragment="com.android.settings.altair.LockscreenSettings" />
+
         <!-- Rotation modes -->
         <PreferenceScreen
                 android:key="display_rotation"

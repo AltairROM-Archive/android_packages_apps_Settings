@@ -79,5 +79,14 @@
     <string name="status_bar_battery_custom_color_charge_title">Fill color</string>
     <string name="status_bar_battery_custom_color_bolt_title">Charging bolt color</string>
     <string name="status_bar_battery_custom_color_text_title">Text color</string>
+
+    <!-- Lock screen settings -->
+    <string name="lockscreen_settings_title">Lock screen</string>
+
+    <!-- Lock screen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+	<string name="lockscreen_wallpaper_reset">Lock screen wallpaper reset to default</string>
 </resources>
 
