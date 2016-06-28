@@ -20,11 +20,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -50,10 +52,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String TAG = "StatusBar";
 
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+    private String PREF_CARRIER_LABEL = "status_bar_carrier_label_settings";
 
     private ListPreference mQuickPulldown;
     private ListPreference mNumColumns;
     private ListPreference mNumRows;
+    private Preference mCarrierLabel;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -61,8 +65,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.status_bar_settings);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mQuickPulldown = (ListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
+        mCarrierLabel = prefSet.findPreference(PREF_CARRIER_LABEL);
 
         int quickPulldown = CMSettings.System.getInt(resolver,
                 CMSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
@@ -87,6 +93,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mNumRows.setValue(String.valueOf(numRows));
         updateNumRowsSummary(numRows);
         mNumRows.setOnPreferenceChangeListener(this);
+
+        ConnectivityManager cm = (ConnectivityManager)
+                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (!cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+            if (mCarrierLabel != null) {
+                prefSet.removePreference(mCarrierLabel);
+            }
+        }
     }
 
     @Override

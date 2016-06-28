@@ -19,6 +19,37 @@
     <string name="default_string">Default</string>
     <string name="reset">Reset</string>
 
+    <!-- Font styles -->
+    <string name="status_bar_font_style_normal">Normal</string>
+    <string name="status_bar_font_style_italic">Italic</string>
+    <string name="status_bar_font_style_bold">Bold</string>
+    <string name="status_bar_font_style_bold_italic">Bold Italic</string>
+    <string name="status_bar_font_style_light">Light</string>
+    <string name="status_bar_font_style_light_italic">Light Italic</string>
+    <string name="status_bar_font_style_thin">Thin</string>
+    <string name="status_bar_font_style_thin_italic">Thin Italic</string>
+    <string name="status_bar_font_style_condensed">Condensed</string>
+    <string name="status_bar_font_style_condensed_italic">Condensed Italic</string>
+    <string name="status_bar_font_style_condensed_light">Condensed Light</string>
+    <string name="status_bar_font_style_condensed_light_italic">Condensed Light Italic</string>
+    <string name="status_bar_font_style_condensed_bold">Condensed Bold</string>
+    <string name="status_bar_font_style_condensed_bold_italic">Condensed Bold Italic</string>
+    <string name="status_bar_font_style_medium">Medium</string>
+    <string name="status_bar_font_style_medium_italic">Medium Italic</string>
+    <string name="status_bar_font_style_black">Black</string>
+    <string name="status_bar_font_style_black_italic">Black Italic</string>
+    <string name="status_bar_font_style_dancingscript">DancingScript</string>
+    <string name="status_bar_font_style_dancingscript_bold">DancingScript Bold</string>
+    <string name="status_bar_font_style_comingsoon">ComingSoon</string>
+    <string name="status_bar_font_style_notoserif">NotoSerif Normal</string>
+    <string name="status_bar_font_style_notoserif_italic">NotoSerif Italic</string>
+    <string name="status_bar_font_style_notoserif_bold">NotoSerif Bold</string>
+    <string name="status_bar_font_style_notoserif_bold_italic">NotoSerif Bold Italic</string>
+
+    <!-- Status bar item positions -->
+    <string name="status_bar_item_position_right">Right</string>
+    <string name="status_bar_item_position_left">Left</string>
+
     <!-- Settings -->    
     <string name="personalization_settings_title">Personalization</string>
     <string name="supersu_title">SuperSU</string>
@@ -86,6 +117,21 @@
     <string name="status_bar_battery_custom_color_charge_title">Fill color</string>
     <string name="status_bar_battery_custom_color_bolt_title">Charging bolt color</string>
     <string name="status_bar_battery_custom_color_text_title">Text color</string>
+
+    <!-- Personalization | Status Bar | Carrier Label -->
+    <string name="carrier_options">Carrier label</string>
+    <string name="custom_carrier_label_title">Custom carrier label</string>
+    <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
+    <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    <string name="status_bar_carrier_color">Carrier label color</string>
+    <string name="status_bar_carrier_size">Carrier label text size</string>
+    <string name="show_carrier_title">Carrier label</string>
+    <string name="show_carrier_disabled">Disabled</string>
+    <string name="show_carrier_keyguard">Lock screen</string>
+    <string name="show_carrier_statusbar">Status bar</string>
+    <string name="show_carrier_enabled">Both</string>
+    <string name="status_bar_carrier_position">Status bar location</string>
+    <string name="status_bar_carrier_font_style_title">Font style</string>
 
     <!-- Lock screen settings -->
     <string name="lockscreen_settings_title">Lock screen</string>
