@@ -31,6 +31,26 @@
             android:title="@string/lockscreen_wallpaper_clear_title"
             android:persistent="false"/>
 
+        <com.android.settings.widget.SeekBarPreferenceCham
+             android:key="lockscreen_alpha"
+             android:title="@string/lockscreen_alpha"
+             settings:max="100"
+             settings:minimum="0"
+             settings:interval="1"
+             settings:unitsLeft=""
+             settings:unitsRight="%"
+             android:persistent="false" />
+
+        <com.android.settings.widget.SeekBarPreferenceCham
+             android:key="lockscreen_security_alpha"
+             android:title="@string/lockscreen_security_alpha"
+             settings:max="100"
+             settings:minimum="0"
+             settings:interval="1"
+             settings:unitsLeft=""
+             settings:unitsRight="%"
+             android:persistent="false" />
+
     </PreferenceCategory>
 </PreferenceScreen>
 

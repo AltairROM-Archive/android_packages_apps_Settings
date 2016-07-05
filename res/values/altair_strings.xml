@@ -141,5 +141,7 @@
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
 	<string name="lockscreen_wallpaper_reset">Lock screen wallpaper reset to default</string>
+    <string name="lockscreen_alpha">Alpha setting</string>
+    <string name="lockscreen_security_alpha">Bouncer alpha setting</string>
 </resources>
 

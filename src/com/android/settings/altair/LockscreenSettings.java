@@ -19,40 +19,83 @@ package com.android.settings.altair;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.widget.SeekBarPreferenceCham;
 
-public class LockscreenSettings extends SettingsPreferenceFragment {
+public class LockscreenSettings extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener {
     public static final int IMAGE_PICK = 1;
     public static final int SET_KEYGUARD_WALLPAPER = 2;
 
     private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
+    private static final String PREF_LOCKSCREEN_ALPHA = "lockscreen_alpha";
+    private static final String PREF_LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
+    private SeekBarPreferenceCham mLsAlpha;
+    private SeekBarPreferenceCham mLsSecurityAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+
         mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+
+        // LS alpha
+        mLsAlpha =
+                (SeekBarPreferenceCham) findPreference(PREF_LOCKSCREEN_ALPHA);
+        float alpha = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_ALPHA, 0.45f);
+        mLsAlpha.setValue((int)(100 * alpha));
+        mLsAlpha.setOnPreferenceChangeListener(this);
+
+        mLsSecurityAlpha =
+                (SeekBarPreferenceCham) findPreference(PREF_LOCKSCREEN_SECURITY_ALPHA);
+        float alpha2 = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f);
+        mLsSecurityAlpha.setValue((int)(100 * alpha2));
+        mLsSecurityAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
     protected int getMetricsCategory() {
         // todo add a constant in MetricsLogger.java
         return MetricsLogger.MAIN_SETTINGS;
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLsAlpha) {
+            int alpha = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f);
+            return true;
+        } else if (preference == mLsSecurityAlpha) {
+            int alpha2 = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_SECURITY_ALPHA, alpha2 / 100.0f);
+            return true;
+        }
+        return false;
     }
 
     @Override
