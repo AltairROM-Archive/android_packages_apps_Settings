@@ -63,10 +63,9 @@
 
         <PreferenceScreen
             android:key="lockscreen_wallpaper"
-            android:title="@string/lockscreen_wallpaper_title" >
-            <intent
-                android:action="android.intent.action.SET_KEYGUARD_WALLPAPER" />
-        </PreferenceScreen>
+            android:title="@string/lockscreen_wallpaper_title"
+            android:persistent="false"
+            android:fragment="com.android.settings.altair.LockscreenWallpaper" />
 
     </PreferenceCategory>
 

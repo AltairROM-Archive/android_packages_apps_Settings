@@ -34,7 +34,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.widget.SeekBarPreferenceCham;
 
-public class LockscreenSettings extends SettingsPreferenceFragment
+public class LockscreenWallpaper extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
     public static final int IMAGE_PICK = 1;
     public static final int SET_KEYGUARD_WALLPAPER = 2;
@@ -52,7 +52,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.lockscreen_settings);
+        addPreferencesFromResource(R.xml.lockscreen_wallpaper);
 
         ContentResolver resolver = getActivity().getContentResolver();
 
