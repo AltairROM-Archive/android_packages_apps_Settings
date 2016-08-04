@@ -35,6 +35,7 @@
     <string name="info_pref_note_title">Note</string>
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
+    <string name="navbar_buttons_alpha_title">Buttons transparency</string>
 
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
