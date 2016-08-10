@@ -26,6 +26,14 @@
             android:icon="@drawable/ic_settings_buttons"
             />
 
+    <!-- Halo -->
+    <PreferenceScreen
+            android:id="@+id/halo_settings"
+            android:title="@string/halo_settings_title"
+            android:fragment="com.android.settings.altair.HaloSettings"
+            android:icon="@drawable/ic_settings_halo"
+            />
+
     <!-- Miscellaneous -->
     <PreferenceScreen
             android:id="@+id/misc_settings"
