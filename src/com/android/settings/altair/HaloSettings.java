@@ -18,7 +18,9 @@ package com.android.settings.altair;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.database.ContentObserver;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -27,8 +29,8 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.support.design.widget.Snackbar;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
@@ -64,6 +66,8 @@ public class HaloSettings extends SettingsPreferenceFragment
     private SwitchPreference mHaloUnlockPing;
 
     ViewGroup viewGroup;
+
+    private SettingsObserver mSettingsObserver;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -112,16 +116,33 @@ public class HaloSettings extends SettingsPreferenceFragment
         mHaloPause = (SwitchPreference) prefSet.findPreference(KEY_HALO_PAUSE);
         mHaloUnlockPing = (SwitchPreference) prefSet.findPreference(KEY_HALO_UNLOCK_PING);
 
-        if (Settings.Secure.getInt(resolver,
-                Settings.Secure.HALO_ACTIVE, 0) == 0) {
-            mHaloSize.setEnabled(false);
-            mHaloNotifyCount.setEnabled(false);
-            mHaloMsgAnimate.setEnabled(false);
-            mHaloFloat.setEnabled(false);
-            mHaloHide.setEnabled(false);
-            mHaloMsgBox.setEnabled(false);
-            mHaloPause.setEnabled(false);
-            mHaloUnlockPing.setEnabled(false);
+        mSettingsObserver = new SettingsObserver(new Handler());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mSettingsObserver.observe();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mSettingsObserver.stopObserve();
+    }
+
+    private void updateSettings() {
+        boolean haloEnabled = Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.HALO_ACTIVE, 0) != 0;
+        mHaloSize.setEnabled(haloEnabled);
+        mHaloNotifyCount.setEnabled(haloEnabled);
+        mHaloMsgAnimate.setEnabled(haloEnabled);
+        mHaloFloat.setEnabled(haloEnabled);
+        mHaloHide.setEnabled(haloEnabled);
+        mHaloMsgBox.setEnabled(haloEnabled);
+        mHaloPause.setEnabled(haloEnabled);
+        mHaloUnlockPing.setEnabled(haloEnabled);
+        if (!haloEnabled) {
             callSnackbarInfo();
         }
     }
@@ -130,11 +151,6 @@ public class HaloSettings extends SettingsPreferenceFragment
     protected int getMetricsCategory() {
         // todo add a constant in MetricsLogger.java
         return MetricsLogger.CUSTOM_ROM_SETTINGS;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
     }
 
     @Override
@@ -159,7 +175,34 @@ public class HaloSettings extends SettingsPreferenceFragment
     }
 
     private void callSnackbarInfo() {
-        Snackbar.make(viewGroup, R.string.halo_disabled_info, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(getContext(), R.string.halo_disabled_info, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+    * Settingsobserver to update settings when Halo gets en- or disabled
+    */
+    private class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.HALO_ACTIVE), false, this);
+            updateSettings();
+        }
+
+        void stopObserve() {
+            ContentResolver resolver = getActivity().getContentResolver();
+            resolver.unregisterContentObserver(this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            updateSettings();
+        }
     }
 
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
