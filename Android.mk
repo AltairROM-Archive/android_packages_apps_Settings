@@ -5,6 +5,7 @@ LOCAL_JAVA_LIBRARIES := bouncycastle conscrypt telephony-common ims-common org.d
 LOCAL_STATIC_JAVA_LIBRARIES := \
 	android-support-v4 \
 	android-support-v13 \
+    android-support-design \
 	jsr305 \
 	org.cyanogenmod.platform.internal \
 	libphonenumber

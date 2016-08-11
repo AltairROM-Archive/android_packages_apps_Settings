@@ -158,6 +158,7 @@
     <string name="halo_enable_summary">Enable Halo button in statusbar header</string>
     <string name="halo_floating_notifications_title">Use Floating Mode</string>
     <string name="halo_floating_notifications_summary">Always launch activities from notifications in Float Mode.</string>
+    <string name="halo_disabled_info">Halo must be active in order to change its settings</string>
 
     <string name="halo_size_title">Halo size</string>
     <string name="halo_size_summary">Defines how big Halo is going to be</string>
