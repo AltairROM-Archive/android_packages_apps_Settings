@@ -29,8 +29,8 @@ import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import android.support.design.widget.Snackbar;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
@@ -68,7 +68,6 @@ public class HaloSettings extends SettingsPreferenceFragment
     ViewGroup viewGroup;
 
     private SettingsObserver mSettingsObserver;
-    private Snackbar mSnackbar;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -143,9 +142,7 @@ public class HaloSettings extends SettingsPreferenceFragment
         mHaloMsgBox.setEnabled(haloEnabled);
         mHaloPause.setEnabled(haloEnabled);
         mHaloUnlockPing.setEnabled(haloEnabled);
-        if (haloEnabled) {
-            dismissSnackbar();
-        } else {
+        if (!haloEnabled) {
             callSnackbarInfo();
         }
     }
@@ -178,15 +175,7 @@ public class HaloSettings extends SettingsPreferenceFragment
     }
 
     private void callSnackbarInfo() {
-        dismissSnackbar();
-        mSnackbar = Snackbar.make(viewGroup, R.string.halo_disabled_info, Snackbar.LENGTH_LONG);
-        mSnackbar.show();
-    }
-
-    private void dismissSnackbar() {
-        if (mSnackbar != null) {
-            mSnackbar.dismiss();
-        }
+        Toast.makeText(getContext(), R.string.halo_disabled_info, Toast.LENGTH_LONG).show();
     }
 
     /**
