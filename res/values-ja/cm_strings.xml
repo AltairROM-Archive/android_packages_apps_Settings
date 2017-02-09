@@ -172,7 +172,7 @@
   <string name="profile_brightness_override_checkbox_label">明るさを変更</string>
   <!-- Connection override toggles (not all are used at this time ) -->
   <string name="toggleWifi">Wi\u2011Fi</string>
-  <string name="toggleWifiAp">Wi\u2011Fiテザリング</string>
+  <string name="toggleWifiAp">Wi-Fi テザリング</string>
   <string name="toggleBluetooth">Bluetooth</string>
   <string name="toggleGPS">GPS</string>
   <string name="toggleData">データ接続</string>
@@ -640,7 +640,7 @@
   <string name="dialog_title_lcd_density">画素密度</string>
   <string name="lcd_density_value_format">%d DPI</string>
   <string name="lcd_density_default_value_format">%d DPI（デフォルト）</string>
-  <string name="restarting_ui">UIを再起動中\u2026</string>
+  <string name="restarting_ui">UIを再起動中...</string>
   <!-- Stylus Icon -->
   <string name="stylus_icon_enabled_title">スタイラス使用時にアイコンを表示</string>
   <string name="stylus_icon_enabled_summary">スタイラスでホバリングまたは描写しているときにポインターアイコンを表示する</string>
@@ -856,10 +856,10 @@
   <string name="no_filters_title">フィルターが設定されていません</string>
   <!-- Anonymous Statistics #CM -->
   <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
-  <string name="anonymous_statistics_title">LineageOSの統計</string>
-  <string name="anonymous_statistics_summary">匿名の統計のレポートに同意してLineageOSの改善に協力する</string>
+  <string name="anonymous_statistics_title">LineageOS の統計</string>
+  <string name="anonymous_statistics_summary">匿名の統計のレポートに同意して LineageOS の改善に協力する</string>
   <string name="anonymous_statistics_warning_title">情報</string>
-  <string name="anonymous_statistics_warning">LineageOSの統計に同意すると、端末間のユニークインストール回数を調べるためにLineageOSの開発者への非個人情報の送信を許可します。送信される情報にはユニークIDが含まれますが、プライバシーや個人データが危険にさらされることはありません。データはブート時に送信されます。\n\n送信されるデータの見本は[データをプレビュー]をタップして確認することができます。</string>
+  <string name="anonymous_statistics_warning">LineageOS の統計に同意すると、端末間のユニークインストール回数を調べるために LineageOS の開発者への非個人情報の送信を許可します。送信される情報にはユニーク ID が含まれますが、プライバシーや個人データが危険にさらされることはありません。データはブート時に送信されます。\n\n送信されるデータの見本は[データをプレビュー]をタップして確認することができます。</string>
   <string name="enable_reporting_title">レポートを有効化</string>
   <string name="preview_data_title">データをプレビュー</string>
   <string name="view_stats_title">統計を表示</string>
@@ -880,16 +880,16 @@
   <string name="menu_hidden_apps_reset_lock">パターンロックをリセット</string>
   <string name="protected_apps">アプリの保護</string>
   <string name="protected_apps_summary">パスワードでロックしている場合に非表示にするアプリを管理する</string>
-  <string name="saving_protected_components">コンポーネントの状態を保存中\u2026</string>
+  <string name="saving_protected_components">コンポーネントの状態を保存中...</string>
   <string name="pa_login_username_hint">ユーザー名（メール）</string>
   <string name="pa_login_password_hint">パスワード</string>
   <string name="pa_login_submit_button">サインイン</string>
-  <string name="pa_login_checking_password">アカウントを確認中\u2026</string>
+  <string name="pa_login_checking_password">アカウントを確認中...</string>
   <string name="pa_login_incorrect_login">ログインできませんでした</string>
   <string name="pa_pattern_or_fingerprint_header">ロック解除用にパターンか指紋を使用してください</string>
   <!-- Contributors cloud activity -->
   <string name="contributors_cloud_fragment_title">貢献者</string>
-  <string name="contributors_cloud_loading_message">貢献者のデータを読み込み中\u2026</string>
+  <string name="contributors_cloud_loading_message">貢献者のデータを読み込み中...</string>
   <string name="contributors_cloud_failed_message">貢献者の情報を読み込めません</string>
   <string name="contributor_info_menu">貢献者の情報</string>
   <string name="contributor_info_msg">
@@ -926,7 +926,7 @@
   <string name="sim_enabler_airplane_on">機内モードがONになっている間はこの操作を実行することはできません。</string>
   <string name="sim_enabler_in_call">通話中はこの操作を実行することはできません。</string>
   <string name="sim_enabler_both_inactive">すべてのSIMカードを無効にはできません</string>
-  <string name="sim_enabler_enabling">アクティベート中\u2026</string>
+  <string name="sim_enabler_enabling">アクティベート中...</string>
   <string name="sim_enabler_disabling">アクティベート解除中\u2026</string>
   <string name="sub_activate_success">SIMをアクティベートしました。</string>
   <string name="sub_activate_failed">アクティベートできませんでした。</string>
