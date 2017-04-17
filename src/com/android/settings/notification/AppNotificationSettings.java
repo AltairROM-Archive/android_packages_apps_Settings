@@ -188,14 +188,6 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
             }
         });
 
-        mHalo.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                final boolean halo = (Boolean) newValue;
-                return mBackend.setHalo(pkg, mUid, halo);
-            }
-        });
-
         mSensitive.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -279,7 +271,6 @@ public class AppNotificationSettings extends SettingsPreferenceFragment {
         setVisible(mBlock, !mIsSystemPackage);
         setVisible(mPriority, mIsSystemPackage || !banned);
         setVisible(mPeekable, mIsSystemPackage || !banned && headsUpEnabled);
-        setVisible(mHalo, mIsSystemPackage || !banned);
         setVisible(mSensitive, mIsSystemPackage || !banned && lockscreenSecure
                 && lockscreenNotificationsEnabled && allowPrivate);
         setVisible(mShowOnKeyguard, mIsSystemPackage || !banned);

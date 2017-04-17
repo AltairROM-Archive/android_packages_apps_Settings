@@ -46,7 +46,6 @@ public class NotificationBackend {
         row.banned = getNotificationsBanned(row.pkg, row.uid);
         row.priority = getHighPriority(row.pkg, row.uid);
         row.peekable = getPeekable(row.pkg, row.uid);
-        row.halo = getHalo(row.pkg, row.uid);
         row.sensitive = getSensitive(row.pkg, row.uid);
         return row;
     }
@@ -119,25 +118,6 @@ public class NotificationBackend {
         }
     }
 
-    public boolean getHalo(String pkg, int uid) {
-        try {
-            return sINM.isPackageAllowedForHalo(pkg, uid);
-        } catch (Exception e) {
-            Log.w(TAG, "Error calling NoMan", e);
-            return false;
-        }
-    }
-
-    public boolean setHalo(String pkg, int uid, boolean halo) {
-        try {
-            sINM.setHaloPolicyBlack(pkg, uid, halo);
-            return true;
-        } catch (Exception e) {
-           Log.w(TAG, "Error calling NoMan", e);
-           return false;
-        }
-    }
-
     public boolean setSensitive(String pkg, int uid, boolean sensitive) {
         try {
             sINM.setPackageVisibilityOverride(pkg, uid,
@@ -182,7 +162,6 @@ public class NotificationBackend {
         public boolean banned;
         public boolean priority;
         public boolean peekable;
-        public boolean halo;
         public boolean sensitive;
         public boolean first;  // first app in section
     }

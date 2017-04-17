@@ -42,14 +42,6 @@
             android:order="3"
             android:persistent="false" />
 
-    <!-- Halo -->
-    <SwitchPreference
-            android:key="halo"
-            android:title="@string/app_notification_halo_title"
-            android:summary="@string/app_notification_halo_summary"
-            android:order="4"
-            android:persistent="false" />
-
     <!-- Sensitive -->
     <SwitchPreference
             android:key="sensitive"
