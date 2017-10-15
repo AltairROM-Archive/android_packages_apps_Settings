@@ -42,8 +42,8 @@
     <string name="root_appops_title">Manage root accesses</string>
     <string name="root_appops_summary">View and control the root rules</string>
 
-    <!-- About phone screen, LineageOS version -->
-    <string name="mod_version">LineageOS version</string>
+    <!-- About phone screen, ROM version -->
+    <string name="mod_version">Altair ROM version</string>
     <string name="mod_version_default">Unknown</string>
 
     <!-- About phone screen, Device model -->

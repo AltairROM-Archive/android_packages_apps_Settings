@@ -20,30 +20,12 @@
         android:title="@string/about_settings">
 
         <!-- System update settings - launches activity -->
-        <PreferenceScreen android:key="system_update_settings"
-                android:title="@string/system_update_settings_list_item_title"
-                android:summary="@string/system_update_settings_list_item_summary">
-            <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
-        </PreferenceScreen>
-
-
         <PreferenceScreen android:key="additional_system_update_settings"
                           android:title="@string/additional_system_update_settings_list_item_title">
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="@string/additional_system_update"
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
-
-        <!-- LineageOS Updates -->
-        <cyanogenmod.preference.SelfRemovingPreference android:key="cm_updates"
-                android:title="@string/cmupdate_settings_title"
-                android:summary="@string/system_update_settings_list_item_summary"
-                cm:requiresOwner="true"
-                cm:requiresPackage="org.lineageos.updater">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.lineageos.updater"
-                    android:targetClass="org.lineageos.updater.UpdatesActivity" />
-        </cyanogenmod.preference.SelfRemovingPreference>
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
@@ -82,10 +64,6 @@
                 android:title="@string/device_feedback">
         </PreferenceScreen>
 
-        <!-- Contributors cloud -->
-        <org.cyanogenmod.internal.cmparts.CMPartsPreference
-                android:key="contributors" />
-
         <!-- Device name -->
         <Preference android:key="device_name"
                 android:enabled="false"
@@ -115,6 +93,7 @@
         <Preference android:key="mod_version"
                 android:enabled="false"
                 android:shouldDisableView="false"
+                android:selectable="false"
                 android:title="@string/mod_version"
                 android:summary="@string/mod_version_default" />
 
