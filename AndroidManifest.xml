@@ -2964,7 +2964,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="1">
+            <intent-filter android:priority="2">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
@@ -2979,17 +2979,17 @@
             android:label="@string/magisk_title"
             android:icon="@drawable/ic_settings_magisk"
             android:taskAffinity="">
-            <intent-filter android:priority="4">
+            <intent-filter android:priority="2">
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="0">
+            <intent-filter android:priority="1">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.personalization" />
+                android:value="com.android.settings.category.system" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.MagiskManager" />
             <meta-data android:name="com.android.settings.summary"
@@ -3006,11 +3006,11 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="0">
+            <intent-filter android:priority="1">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.personalization" />
+                android:value="com.android.settings.category.system" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.SuperSU" />
             <meta-data android:name="com.android.settings.summary"
@@ -3022,7 +3022,7 @@
             android:label="@string/navigation_category"
             android:icon="@drawable/dui_navbar_icon"
             android:taskAffinity="">
-            <intent-filter android:priority="2">
+            <intent-filter android:priority="1">
                 <action android:name="com.android.settings.aicp.NavbarSettings" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -3032,11 +3032,11 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="0">
+            <intent-filter android:priority="2">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.personal" />
+                android:value="com.android.settings.category.personalization" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.aicp.NavbarSettings" />
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
