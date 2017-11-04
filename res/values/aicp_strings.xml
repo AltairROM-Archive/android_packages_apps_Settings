@@ -47,4 +47,9 @@
     <string name="cyan">Cyan</string>
     <string name="grey">Grey</string>
     <string name="default_string">Default</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_title">Miscellaneous</string>
+    <string name="toast_icon_title">Toast icon</string>
+    <string name="toast_icon_summary">Display the app icon corresponding with the toast</string>
 </resources>
