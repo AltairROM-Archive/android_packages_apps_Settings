@@ -180,5 +180,5 @@ public class Settings extends SettingsActivity {
 
     // Altair Settings categories
     public static class AltairSettingsActivity extends SettingsActivity {}
-
+    public static class SmartPixelsActivity extends SettingsActivity { /* empty */ }
 }

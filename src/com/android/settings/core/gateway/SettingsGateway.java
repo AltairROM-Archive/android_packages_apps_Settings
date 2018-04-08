@@ -149,6 +149,7 @@ import com.android.settings.wifi.savedaccesspoints.SavedAccessPointsWifiSettings
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
 import com.altair.settings.AltairSettings;
+import com.altair.settings.fragments.SmartPixels;
 
 public class SettingsGateway {
 
@@ -286,7 +287,8 @@ public class SettingsGateway {
             MobileNetworkListFragment.class.getName(),
             GlobalActionsPanelSettings.class.getName(),
             DarkModeSettingsFragment.class.getName(),
-            AltairSettings.class.getName()
+            AltairSettings.class.getName(),
+            SmartPixels.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -323,8 +325,7 @@ public class SettingsGateway {
             Settings.DateTimeSettingsActivity.class.getName(),
             Settings.EnterprisePrivacySettingsActivity.class.getName(),
             Settings.MyDeviceInfoActivity.class.getName(),
-            Settings.ModuleLicensesActivity.class.getName(),
-            UserBackupSettingsActivity.class.getName(),
-            Settings.AltairSettingsActivity.class.getName()
+            Settings.AltairSettingsActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName()
     };
 }
