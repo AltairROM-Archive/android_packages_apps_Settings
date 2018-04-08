@@ -50,5 +50,16 @@
                 android:resource="@string/altair_settings_activity_summary"/>
         </activity>
 
+        <!-- Smart Pixels -->
+        <activity android:name="Settings$SmartPixelsActivity"
+                android:label="@string/smart_pixels_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.altair.settings.fragments.SmartPixels" />
+        </activity>
+
     </application>
 </manifest>
