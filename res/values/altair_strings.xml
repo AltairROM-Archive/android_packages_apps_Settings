@@ -17,4 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Personalization -->
     <string name="header_category_personalization">Personalization</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_category">Miscellaneous</string>
 </resources>
