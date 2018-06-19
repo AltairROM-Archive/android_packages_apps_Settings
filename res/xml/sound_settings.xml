@@ -52,7 +52,7 @@
         <lineageos.preference.SecureSettingSwitchPreference
                 android:key="volume_link_notification"
                 android:title="@string/volume_link_notification_title"
-                android:defaultValue="true" />
+                android:defaultValue="false" />
 
         <!-- Increasing ring -->
         <lineageos.preference.LineageSystemSettingSwitchPreference
