@@ -316,6 +316,7 @@ public class AppStorageSettings extends AppInfoWithHeader
             }
             mButtonsPref.setButton1Icon(R.drawable.ic_settings_delete)
                     .setButton1OnClickListener(v -> handleClearDataClick());
+            mButtonsPref.setButton1OnClickListener(v -> handleClearDataClick());
         }
 
         if (mAppsControlDisallowedBySystem || AppUtils.isMainlineModule(mPm, mPackageName)) {
