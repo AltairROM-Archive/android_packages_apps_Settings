@@ -19,13 +19,6 @@
     android:title="@string/header_category_system">
 
     <Preference
-        android:key="navigation_settings"
-        android:title="@string/navigationbar_title"
-        android:icon="@drawable/ic_settings_navigation"
-        android:order="-251"
-        android:fragment="com.dirtyunicorns.tweaks.fragments.NavigationBar" />
-
-    <Preference
         android:key="gesture_settings"
         android:title="@string/gesture_preference_title"
         android:icon="@drawable/ic_settings_gestures"

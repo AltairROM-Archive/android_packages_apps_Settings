@@ -3309,6 +3309,20 @@
 
         <!-- This is the longest AndroidManifest.xml ever. -->
 
+        <activity android:name=".Settings$AltairSettingsActivity"
+                  android:label="@string/altair_settings_activity"
+                  android:icon="@drawable/ic_settings_altairsettings">
+            <intent-filter android:priority="12">
+                <action android:name="com.android.settings.action.SETTINGS"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.homepage"/>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.altair.settings.AltairSettings"/>
+            <meta-data android:name="com.android.settings.summary"
+                       android:resource="@string/altair_settings_activity_summary"/>
+        </activity>
+
         <!-- Global navbar settings -->
         <activity android:name="Settings$NavigationSettingsActivity"
                 android:label="@string/navigationbar_title"
@@ -3318,7 +3332,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.dirtyunicorns.tweaks.fragments.NavigationBar" />
+                android:value="com.altair.settings.fragments.NavbarSettings" />
         </activity>
 
         <!-- Smartbar settings -->
@@ -3330,7 +3344,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.dirtyunicorns.tweaks.fragments.SmartbarSettings" />
+                android:value="com.altair.settings.fragments.SmartbarSettings" />
         </activity>
 
         <!-- Fling settings -->
@@ -3342,7 +3356,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.dirtyunicorns.tweaks.fragments.FlingSettings" />
+                android:value="com.altair.settings.fragments.FlingSettings" />
         </activity>
 
         <!-- Pulse settings -->
@@ -3354,7 +3368,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.dirtyunicorns.tweaks.fragments.PulseSettings" />
+                android:value="com.altair.settings.fragments.PulseSettings" />
         </activity>
 
         <!-- System action picker -->

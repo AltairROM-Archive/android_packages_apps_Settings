@@ -132,10 +132,11 @@ import com.android.settings.wifi.WifiInfo;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
-import com.dirtyunicorns.tweaks.fragments.FlingSettings;
-import com.dirtyunicorns.tweaks.fragments.NavigationBar;
-import com.dirtyunicorns.tweaks.fragments.PulseSettings;
-import com.dirtyunicorns.tweaks.fragments.SmartbarSettings;
+import com.altair.settings.AltairSettings;
+import com.altair.settings.fragments.FlingSettings;
+import com.altair.settings.fragments.NavbarSettings;
+import com.altair.settings.fragments.PulseSettings;
+import com.altair.settings.fragments.SmartbarSettings;
 
 public class SettingsGateway {
 
@@ -258,7 +259,8 @@ public class SettingsGateway {
             LockscreenDashboardFragment.class.getName(),
             BluetoothDeviceDetailsFragment.class.getName(),
             DataUsageList.class.getName(),
-            NavigationBar.class.getName(),
+            AltairSettings.class.getName(),
+            NavbarSettings.class.getName(),
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName(),
             PulseSettings.class.getName()
@@ -300,6 +302,7 @@ public class SettingsGateway {
             Settings.DateTimeSettingsActivity.class.getName(),
             Settings.DeviceInfoSettingsActivity.class.getName(),
             Settings.EnterprisePrivacySettingsActivity.class.getName(),
+            Settings.AltairSettingsActivity.class.getName(),
             Settings.NavigationSettingsActivity.class.getName(),
             Settings.FlingSettingsActivity.class.getName(),
             Settings.SmartbarSettingsActivity.class.getName(),
