@@ -3353,7 +3353,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.altair.settings.fragments.NavbarSettings" />
+                android:value="com.altair.settings.fragments.NavigationSettings" />
         </activity>
 
         <!-- Smartbar settings -->

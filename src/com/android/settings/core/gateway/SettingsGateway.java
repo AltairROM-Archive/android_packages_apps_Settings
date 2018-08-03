@@ -134,7 +134,7 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import com.altair.settings.AltairSettings;
 import com.altair.settings.fragments.FlingSettings;
-import com.altair.settings.fragments.NavbarSettings;
+import com.altair.settings.fragments.NavigationSettings;
 import com.altair.settings.fragments.PulseSettings;
 import com.altair.settings.fragments.SmartbarSettings;
 
@@ -260,7 +260,7 @@ public class SettingsGateway {
             BluetoothDeviceDetailsFragment.class.getName(),
             DataUsageList.class.getName(),
             AltairSettings.class.getName(),
-            NavbarSettings.class.getName(),
+            NavigationSettings.class.getName(),
             FlingSettings.class.getName(),
             SmartbarSettings.class.getName(),
             PulseSettings.class.getName()
