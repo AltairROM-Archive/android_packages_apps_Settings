@@ -3393,7 +3393,7 @@
         </activity>
 
         <!-- System action picker -->
-        <activity android:name="com.dirtyunicorns.tweaks.ActionPickerDialogActivity"
+        <activity android:name="com.altair.settings.ActionPickerDialogActivity"
                 android:theme="@style/Theme.SmartBar.Dialog"
                 android:label="@string/choose_action_title"
                 android:excludeFromRecents="true">
@@ -3403,7 +3403,7 @@
         </activity>
 
         <!-- Icon pack picker -->
-        <activity android:name="com.dirtyunicorns.tweaks.IconPickerActivity"
+        <activity android:name="com.altair.settings.IconPickerActivity"
                 android:theme="@style/Theme.SmartBar.Dialog"
                 android:label="@string/icon_pack_picker_dialog_title"
                 android:excludeFromRecents="true">
@@ -3414,7 +3414,7 @@
 
 
         <!-- Icon picker proxy for gallery -->
-        <activity android:name="com.dirtyunicorns.tweaks.IconPickerGallery"
+        <activity android:name="com.altair.settings.IconPickerGallery"
             android:theme="@style/Theme.SmartBar.Dialog"
             android:label="@string/icon_pack_picker_dialog_title"
             android:excludeFromRecents="true">
@@ -3424,7 +3424,7 @@
         </activity>
 
         <!-- Icon pack grid -->
-        <activity android:name="com.dirtyunicorns.tweaks.IconPackGridActivity"
+        <activity android:name="com.altair.settings.IconPackGridActivity"
                 android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
