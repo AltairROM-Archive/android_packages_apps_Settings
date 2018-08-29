@@ -173,15 +173,4 @@
                 android:key="theme"
                 android:title="@string/theme" />
     </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/miscellaneous_title">
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="toast_icon"
-            android:title="@string/toast_icon_title"
-            android:summary="@string/toast_icon_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
 </PreferenceScreen>
