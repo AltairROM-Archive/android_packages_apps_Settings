@@ -860,8 +860,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         String oldValue = SystemProperties.get(ROOT_ACCESS_PROPERTY, "0");
         SystemProperties.set(ROOT_ACCESS_PROPERTY, newValue.toString());
         if (Integer.valueOf(newValue.toString()) < 2 && !oldValue.equals(newValue)
-                && "1".equals(SystemProperties.get("service.adb.root", "0"))) {
-            SystemProperties.set("service.adb.root", "0");
+                && "1".equals(SystemProperties.get("cm.service.adb.root", "0"))) {
+            SystemProperties.set("cm.service.adb.root", "0");
             Settings.Global.putInt(getActivity().getContentResolver(),
                     Settings.Global.ADB_ENABLED, 0);
             Settings.Global.putInt(getActivity().getContentResolver(),
@@ -873,8 +873,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private void resetRootAccessOptions() {
         String oldValue = SystemProperties.get(ROOT_ACCESS_PROPERTY, "0");
         SystemProperties.set(ROOT_ACCESS_PROPERTY, "0");
-        if (!oldValue.equals("0") && "1".equals(SystemProperties.get("service.adb.root", "0"))) {
-            SystemProperties.set("service.adb.root", "0");
+        if (!oldValue.equals("0") && "1".equals(SystemProperties.get("cm.service.adb.root", "0"))) {
+            SystemProperties.set("cm.service.adb.root", "0");
             Settings.Global.putInt(getActivity().getContentResolver(),
                     Settings.Global.ADB_ENABLED, 0);
             Settings.Global.putInt(getActivity().getContentResolver(),
