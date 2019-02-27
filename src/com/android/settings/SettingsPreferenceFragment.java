@@ -50,6 +50,7 @@ import com.android.settings.core.InstrumentedPreferenceFragment;
 import com.android.settings.core.instrumentation.Instrumentable;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.widget.LoadingViewController;
+import com.android.settings.widget.SettingsDialogPreference;
 import com.android.settingslib.CustomDialogPreference;
 import com.android.settingslib.CustomEditTextPreference;
 import com.android.settingslib.HelpUtils;
@@ -583,6 +584,9 @@ public abstract class SettingsPreferenceFragment extends InstrumentedPreferenceF
         DialogFragment f = null;
         if (preference instanceof RestrictedListPreference) {
             f = RestrictedListPreference.RestrictedListPreferenceDialogFragment
+                    .newInstance(preference.getKey());
+        } else if (preference instanceof SettingsDialogPreference) {
+            f = SettingsDialogPreference.CustomPreferenceDialogFragment
                     .newInstance(preference.getKey());
         } else if (preference instanceof CustomListPreference) {
             f = CustomListPreference.CustomListPreferenceDialogFragment
