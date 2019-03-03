@@ -409,7 +409,6 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new DefaultLaunchPreferenceController(context, "development_tools"));
         controllers.add(new MemoryUsagePreferenceController(context));
-        controllers.add(new BugReportPreferenceController(context));
         controllers.add(new LocalBackupPasswordPreferenceController(context));
         controllers.add(new StayAwakePreferenceController(context, lifecycle));
         controllers.add(new HdcpCheckingPreferenceController(context));
@@ -425,7 +424,6 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
         controllers.add(new WirelessAdbPreferenceController(context, fragment));
         controllers.add(new ClearAdbKeysPreferenceController(context, fragment));
         controllers.add(new LocalTerminalPreferenceController(context));
-        controllers.add(new BugReportInPowerPreferenceController(context));
         controllers.add(new MockLocationAppPreferenceController(context, fragment));
         controllers.add(new DebugViewAttributesPreferenceController(context));
         controllers.add(new SelectDebugAppPreferenceController(context, fragment));
