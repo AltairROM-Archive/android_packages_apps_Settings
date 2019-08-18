@@ -32,7 +32,6 @@ import android.net.ConnectivityManager.NetworkCallback;
 import android.net.LinkAddress;
 import android.net.LinkProperties;
 import android.net.Network;
-import android.net.NetworkBadging;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
@@ -370,8 +369,8 @@ public class WifiDetailPreferenceController extends AbstractPreferenceController
     private void refreshRssiViews() {
         int iconSignalLevel = WifiManager.calculateSignalLevel(
                 mRssi, WifiManager.RSSI_LEVELS);
-        Drawable wifiIcon = NetworkBadging.getWifiIcon(
-                iconSignalLevel, NetworkBadging.BADGING_NONE, mContext.getTheme()).mutate();
+        Drawable wifiIcon = mContext.getDrawable(
+            com.android.settingslib.Utils.getWifiIconResource(iconSignalLevel));
 
         wifiIcon.setTint(Utils.getColorAccent(mContext));
         mEntityHeaderController.setIcon(wifiIcon).done(mFragment.getActivity(), true /* rebind */);
