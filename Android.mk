@@ -21,6 +21,15 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_USE_AAPT2 := true
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, ../AltairSettings/src)
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+    --extra-packages com.altair.settings
+
+LOCAL_FULL_LIBS_MANIFEST_FILES += $(LOCAL_PATH)/../AltairSettings/AndroidManifest.xml
+
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+    packages/apps/AltairSettings/res
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx-constraintlayout_constraintlayout \
@@ -34,7 +43,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.recyclerview_recyclerview \
     com.google.android.material_material \
     setupcompat \
-    setupdesign
+    setupdesign \
+    VendorSupport-preference
 
 LOCAL_JAVA_LIBRARIES := \
     telephony-common \

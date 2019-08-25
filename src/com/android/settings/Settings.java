@@ -178,4 +178,7 @@ public class Settings extends SettingsActivity {
     public static class AccountDashboardActivity extends SettingsActivity {}
     public static class SystemDashboardActivity extends SettingsActivity {}
 
+    // Altair Settings categories
+    public static class AltairSettingsActivity extends SettingsActivity {}
+
 }
