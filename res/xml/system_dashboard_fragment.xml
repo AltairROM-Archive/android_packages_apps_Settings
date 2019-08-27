@@ -28,13 +28,6 @@
         android:fragment="com.android.settings.gestures.GestureSettings"
         settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
-   <Preference
-        android:key="navigation_settings"
-        android:title="@string/navigation_settings_title"
-        android:icon="@drawable/ic_settings_navigation"
-        android:order="-260"
-        android:fragment="com.android.settings.smartnav.NavigationBarSettings"/>
-
     <!-- Backup -->
     <Preference
         android:key="backup_settings"
