@@ -27,7 +27,7 @@
             android:label="@string/altair_settings_activity_title"
             android:icon="@drawable/ic_homepage_altairsettings"
             android:taskAffinity="com.android.settings">
-            <intent-filter android:priority="12">
+            <intent-filter android:priority="1">
                 <action android:name="com.altair.settings.AltairSettings" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
-            <intent-filter android:priority="-1">
+            <intent-filter android:priority="10">
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
