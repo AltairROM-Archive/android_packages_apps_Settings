@@ -24,17 +24,30 @@
     <application>
 
         <activity android:name=".Settings$AltairSettingsActivity"
-                  android:label="@string/altair_settings_activity"
-                  android:icon="@drawable/ic_homepage_altairsettings">
+            android:label="@string/altair_settings_activity_title"
+            android:icon="@drawable/ic_homepage_altairsettings"
+            android:taskAffinity="com.android.settings">
             <intent-filter android:priority="12">
-                <action android:name="com.android.settings.action.SETTINGS"/>
+                <action android:name="com.altair.settings.AltairSettings" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="-1">
+                <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.ia.homepage"/>
+                android:value="com.android.settings.category.ia.homepage" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="com.altair.settings.AltairSettings"/>
+                android:value="com.altair.settings.AltairSettings" />
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
             <meta-data android:name="com.android.settings.summary"
-                       android:resource="@string/altair_settings_activity_summary"/>
+                android:resource="@string/altair_settings_activity_summary"/>
         </activity>
 
     </application>
