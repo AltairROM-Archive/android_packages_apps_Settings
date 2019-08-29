@@ -32,12 +32,6 @@
         android:title="@string/notification_badging_title"
         settings:controller="com.android.settings.notification.BadgingNotificationPreferenceController"/>
 
-    <com.android.settings.preference.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
-        android:defaultValue="true" />
-
     <!-- Pulse notification light -->
     <SwitchPreference
         android:key="notification_pulse"
