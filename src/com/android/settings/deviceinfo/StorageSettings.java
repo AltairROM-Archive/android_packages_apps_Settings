@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2015 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,14 +75,6 @@ public class StorageSettings extends SettingsPreferenceFragment implements Index
     private static final String TAG_VOLUME_UNMOUNTED = "volume_unmounted";
     private static final String TAG_DISK_INIT = "disk_init";
     private static final int METRICS_CATEGORY = MetricsEvent.DEVICEINFO_STORAGE;
-
-    static final int[] COLOR_PRIVATE = new int[]{
-            Color.parseColor("#ff26a69a"),
-            Color.parseColor("#ffab47bc"),
-            Color.parseColor("#fff2a600"),
-            Color.parseColor("#ffec407a"),
-            Color.parseColor("#ffc0ca33"),
-    };
 
     static int getColorPublic(Resources resources) {
         return resources.getColor(R.color.storage_public);
@@ -172,12 +165,13 @@ public class StorageSettings extends SettingsPreferenceFragment implements Index
         final List<VolumeInfo> volumes = mStorageManager.getVolumes();
         Collections.sort(volumes, VolumeInfo.getDescriptionComparator());
 
-        int[] colorPrivate = getColorPrivate(getResources());
+        int[] colors = getResources().getIntArray(R.array.internal_storage_colors);
+
         for (VolumeInfo vol : volumes) {
             if (vol.getType() == VolumeInfo.TYPE_PRIVATE) {
                 final long volumeTotalBytes = PrivateStorageInfo.getTotalSize(vol,
                         sTotalInternalStorage);
-                final int color = COLOR_PRIVATE[privateCount++ % COLOR_PRIVATE.length];
+                final int color = colors[privateCount++ % colors.length];
                 mInternalCategory.addPreference(
                         new StorageVolumePreference(context, vol, color, volumeTotalBytes));
             } else if (vol.getType() == VolumeInfo.TYPE_PUBLIC) {
