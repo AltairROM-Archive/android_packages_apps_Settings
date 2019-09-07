@@ -75,18 +75,16 @@ public class StorageSettings extends SettingsPreferenceFragment implements Index
     private static final String TAG_DISK_INIT = "disk_init";
     private static final int METRICS_CATEGORY = MetricsEvent.DEVICEINFO_STORAGE;
 
+    static final int[] COLOR_PRIVATE = new int[]{
+            Color.parseColor("#ff26a69a"),
+            Color.parseColor("#ffab47bc"),
+            Color.parseColor("#fff2a600"),
+            Color.parseColor("#ffec407a"),
+            Color.parseColor("#ffc0ca33"),
+    };
+
     static int getColorPublic(Resources resources) {
         return resources.getColor(R.color.storage_public);
-    }
-
-    static int[] getColorPrivate(Resources resources) {
-        return new int[] {
-                resources.getColor(R.color.storage_private_1),
-                resources.getColor(R.color.storage_private_2),
-                resources.getColor(R.color.storage_private_3),
-                resources.getColor(R.color.storage_private_4),
-                resources.getColor(R.color.storage_private_5),
-        };
     }
 
     private StorageManager mStorageManager;
@@ -179,7 +177,7 @@ public class StorageSettings extends SettingsPreferenceFragment implements Index
             if (vol.getType() == VolumeInfo.TYPE_PRIVATE) {
                 final long volumeTotalBytes = PrivateStorageInfo.getTotalSize(vol,
                         sTotalInternalStorage);
-                final int color = colorPrivate[privateCount++ % colorPrivate.length];
+                final int color = COLOR_PRIVATE[privateCount++ % COLOR_PRIVATE.length];
                 mInternalCategory.addPreference(
                         new StorageVolumePreference(context, vol, color, volumeTotalBytes));
             } else if (vol.getType() == VolumeInfo.TYPE_PUBLIC) {
