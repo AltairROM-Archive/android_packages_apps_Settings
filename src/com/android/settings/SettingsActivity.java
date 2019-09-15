@@ -246,12 +246,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String ACTION_TIMER_SWITCH = "qualcomm.intent.action.TIMER_SWITCH";
 
-    private static final String MAGISK_FRAGMENT = "com.android.settings.MagiskManager";
-
-    private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
-
-    private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
-
     private String mFragmentClass;
     private String mActivityAction;
 
@@ -1106,26 +1100,6 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
-        if (MAGISK_FRAGMENT.equals(fragmentName)) {
-            Intent magiskIntent = new Intent();
-            magiskIntent.setClassName("com.topjohnwu.magisk", "com.topjohnwu.magisk.SplashActivity");
-            startActivity(magiskIntent);
-            finish();
-            return null;
-        } else if (SUPERSU_FRAGMENT.equals(fragmentName)) {
-            Intent superSUIntent = new Intent();
-            superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
-            startActivity(superSUIntent);
-            finish();
-            return null;
-        } else if (SUBSTRATUM_FRAGMENT.equals(fragmentName)) {
-            Intent subIntent = new Intent();
-            subIntent.setClassName("projekt.substratum", "projekt.substratum.LaunchActivity");
-            startActivity(subIntent);
-            finish();
-            return null;
-        }
-
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1217,38 +1191,8 @@ public class SettingsActivity extends SettingsDrawerActivity
                         Settings.DevelopmentSettingsActivity.class.getName()),
                 showDev, isAdmin, pm);
 
-        // SuperSU
-        boolean suSupported = false;
-        try {
-            suSupported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.SuperSUActivity.class.getName()),
-                suSupported, isAdmin, pm);
-
         // Reveal development-only quick settings tiles
         DevelopmentTiles.setTilesEnabled(this, showDev);
-
-        // Substratum
-        boolean subSupported = false;
-        try {
-            subSupported = (getPackageManager().getPackageInfo("projekt.substratum", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.SubstratumActivity.class.getName()),
-                subSupported, isAdmin, pm);
-
-        // Magisk Manager
-        boolean magiskSupported = false;
-        try {
-            magiskSupported = (getPackageManager().getPackageInfo("com.topjohnwu.magisk", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.MagiskActivity.class.getName()),
-                magiskSupported, isAdmin, pm);
 
         // Show scheduled power on and off if support
         boolean showTimerSwitch = false;

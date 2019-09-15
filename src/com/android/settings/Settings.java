@@ -162,9 +162,6 @@ public class Settings extends SettingsActivity {
     public static class DeviceSettings extends SettingsActivity { /* empty */ }
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
     public static class SystemSettings extends SettingsActivity { /* empty */ }
-    public static class MagiskActivity extends SettingsActivity { /* empty */ }
-    public static class SuperSUActivity extends SettingsActivity { /* empty */ }
-    public static class SubstratumActivity extends SettingsActivity { /* empty */ }
     public static class MiscellaneousSettingsActivity extends SettingsActivity { /* empty */ }
 
     public static class NavigationSettingsActivity extends SettingsActivity { /* empty */ }
