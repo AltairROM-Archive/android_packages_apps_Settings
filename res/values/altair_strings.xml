@@ -16,4 +16,5 @@
 -->
 <resources>
 
+    <string name="about_device_name">Device</string>
 </resources>
