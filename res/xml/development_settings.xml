@@ -30,11 +30,13 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.applications.ProcessStatsSummary" />
 
+        <!--
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="advanced_reboot"
             android:title="@string/advanced_reboot_title"
             android:summary="@string/advanced_reboot_summary"
             android:defaultValue="true" />
+        -->
 
         <Preference
             android:key="system_server_heap_dump"
