@@ -2525,6 +2525,7 @@
                        android:value="@string/menu_key_system"/>
         </activity>
 
+        <!--
         <activity android:name="Settings$BugReportHandlerPickerActivity"
             android:label="@string/bug_report_handler_title"
             android:exported="true"
@@ -2540,6 +2541,7 @@
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                        android:value="@string/menu_key_system"/>
         </activity>
+        -->
 
         <activity android:name=".bluetooth.BluetoothPairingDialog"
                   android:permission="android.permission.BLUETOOTH_PRIVILEGED"
@@ -2587,6 +2589,7 @@
                        android:value="@string/menu_key_connected_devices"/>
         </activity>
 
+        <!--
         <activity android:name=".RemoteBugreportActivity"
                   android:excludeFromRecents="true"
                   android:exported="true"
@@ -2597,6 +2600,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        -->
 
         <activity android:name=".bluetooth.RequestPermissionHelperActivity"
                   android:label="@string/bluetooth_pairing_request"

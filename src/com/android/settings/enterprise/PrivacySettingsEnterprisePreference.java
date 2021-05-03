@@ -63,7 +63,9 @@ public class PrivacySettingsEnterprisePreference implements PrivacySettingsPrefe
     public List<AbstractPreferenceController> createPreferenceControllers(boolean async) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new NetworkLogsPreferenceController(mContext));
+        /*
         controllers.add(new BugReportsPreferenceController(mContext));
+        */
         controllers.add(new SecurityLogsPreferenceController(mContext));
         final List<AbstractPreferenceController> exposureChangesCategoryControllers =
                 new ArrayList<>();
