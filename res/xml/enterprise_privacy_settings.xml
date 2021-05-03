@@ -39,10 +39,12 @@
                     android:order="240"
                     android:title="@string/enterprise_privacy_network_logs"
                     android:selectable="false"/>
+        <!--
         <Preference android:key="bug_reports"
                     android:order="250"
                     android:title="@string/enterprise_privacy_bug_reports"
                     android:selectable="false"/>
+        -->
         <Preference android:key="security_logs"
                     android:order="260"
                     android:title="@string/enterprise_privacy_security_logs"

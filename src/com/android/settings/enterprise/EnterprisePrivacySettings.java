@@ -61,7 +61,7 @@ public class EnterprisePrivacySettings extends DashboardFragment {
             boolean async) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new NetworkLogsPreferenceController(context));
-        controllers.add(new BugReportsPreferenceController(context));
+      //controllers.add(new BugReportsPreferenceController(context));
         controllers.add(new SecurityLogsPreferenceController(context));
         final List<AbstractPreferenceController> exposureChangesCategoryControllers =
                 new ArrayList<>();

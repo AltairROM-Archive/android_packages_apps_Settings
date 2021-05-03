@@ -2017,6 +2017,7 @@
         <activity android:name="Settings$WebViewAppPickerActivity"
                   android:label="@string/select_webview_provider_dialog_title" />
 
+        <!--
         <activity android:name="Settings$BugReportHandlerPickerActivity"
             android:label="@string/bug_report_handler_title"
             android:exported="true"
@@ -2030,6 +2031,7 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.bugreporthandler.BugReportHandlerPicker" />
         </activity>
+        -->
 
         <activity android:name=".bluetooth.BluetoothPairingDialog"
                   android:permission="android.permission.BLUETOOTH_PRIVILEGED"
@@ -2072,6 +2074,7 @@
                 android:value="com.android.settings.connecteddevice.usb.UsbDetailsFragment"/>
         </activity>
 
+        <!--
         <activity android:name=".RemoteBugreportActivity"
                   android:excludeFromRecents="true"
                   android:exported="true"
@@ -2082,6 +2085,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        -->
 
         <activity android:name=".bluetooth.RequestPermissionHelperActivity"
                   android:label="@string/bluetooth_pairing_request"

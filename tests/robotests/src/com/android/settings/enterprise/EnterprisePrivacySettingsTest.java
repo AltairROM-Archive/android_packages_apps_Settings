@@ -103,7 +103,7 @@ public class EnterprisePrivacySettingsTest {
         assertThat(controllers.size()).isEqualTo(17);
         int position = 0;
         assertThat(controllers.get(position++)).isInstanceOf(NetworkLogsPreferenceController.class);
-        assertThat(controllers.get(position++)).isInstanceOf(BugReportsPreferenceController.class);
+        //assertThat(controllers.get(position++)).isInstanceOf(BugReportsPreferenceController.class);
         assertThat(controllers.get(position++)).isInstanceOf(
                 SecurityLogsPreferenceController.class);
         assertThat(controllers.get(position++)).isInstanceOf(
