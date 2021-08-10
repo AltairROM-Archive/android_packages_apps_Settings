@@ -3442,7 +3442,7 @@
             android:permission="android.permission.BLUETOOTH_ADMIN">
             <intent-filter>
                 <action android:name="com.android.settings.action.LAUNCH_BLUETOOTH_PAIRING"/>
-            </intent-filter>/>
+            </intent-filter>
         </receiver>
 
         <activity android:name=".backup.transport.TransportActivity"
@@ -3458,5 +3458,89 @@
         </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
+
+        <activity android:name=".Settings$AltairSettingsActivity"
+            android:label="@string/altair_settings_activity_title"
+	        android:icon="@drawable/ic_homepage_altairsettings"
+	        android:parentActivityName="com.android.settings">
+            <intent-filter android:priority="69">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.altair.settings.AltairSettings" />
+        </activity>
+
+        <!-- Smart Pixels -->
+        <!--<activity android:name="Settings$SmartPixelsActivity"
+                android:label="@string/smart_pixels_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.altair.settings.fragments.SmartPixels" />
+        </activity>-->
+
+        <!-- Navbar -->
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.BackLongPress"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.BackLongPress" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.BackDoubleTap"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.BackDoubleTap" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.HomeLongPress"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.HomeLongPress" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.HomeDoubleTap"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.HomeDoubleTap" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.AppSwitchLongPress"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.AppSwitchLongPress" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+
+        <!--<activity
+            android:name="com.altair.settings.fragments.navbar.AppSwitchDoubleTap"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
+            android:label="@string/app_picker_dialog_title" >
+            <intent-filter>
+                <action android:name="com.altair.settings.fragments.navbar.AppSwitchDoubleTap" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
     </application>
 </manifest>

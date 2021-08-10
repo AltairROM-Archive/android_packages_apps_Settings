@@ -1,0 +1,2 @@
+# AltairSettings
+-keep class com.altair.settings.**

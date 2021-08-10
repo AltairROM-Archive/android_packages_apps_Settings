@@ -42,6 +42,8 @@ import androidx.preference.PreferenceScreen;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.altair.settings.preferences.CustomDialogPref;
+
 import com.android.settings.core.InstrumentedPreferenceFragment;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.search.actionbar.SearchMenuController;
@@ -548,6 +550,9 @@ public abstract class SettingsPreferenceFragment extends InstrumentedPreferenceF
                     .newInstance(preference.getKey());
         } else if (preference instanceof CustomDialogPreferenceCompat) {
             f = CustomDialogPreferenceCompat.CustomPreferenceDialogFragment
+                    .newInstance(preference.getKey());
+        } else if (preference instanceof CustomDialogPref) {
+            f = CustomDialogPref.CustomPreferenceDialogFragment
                     .newInstance(preference.getKey());
         } else if (preference instanceof CustomEditTextPreferenceCompat) {
             f = CustomEditTextPreferenceCompat.CustomPreferenceDialogFragment
