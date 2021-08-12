@@ -88,10 +88,12 @@ public class LockscreenDashboardFragment extends DashboardFragment
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         use(AmbientDisplayAlwaysOnPreferenceController.class).setConfig(getConfig(context));
         use(AmbientDisplayNotificationsPreferenceController.class).setConfig(getConfig(context));
         use(DoubleTapScreenPreferenceController.class).setConfig(getConfig(context));
         use(PickupGesturePreferenceController.class).setConfig(getConfig(context));
+        */
     }
 
     @Override
@@ -118,12 +120,14 @@ public class LockscreenDashboardFragment extends DashboardFragment
         }
     }
 
+    /*
     private AmbientDisplayConfiguration getConfig(Context context) {
         if (mConfig == null) {
             mConfig = new AmbientDisplayConfiguration(context);
         }
         return mConfig;
     }
+    */
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.security_lockscreen_settings) {
