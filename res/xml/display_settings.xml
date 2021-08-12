@@ -60,6 +60,7 @@
         android:key="livedisplay"
         lineage:requiresConfig="@*lineageos.platform:bool/config_enableLiveDisplay" />
 
+    <!--
     <com.android.settingslib.RestrictedPreference
         android:key="wallpaper"
         android:title="@string/wallpaper_settings_title"
@@ -67,6 +68,7 @@
         settings:useAdminDisabledSummary="true"
         settings:controller="com.android.settings.display.WallpaperPreferenceController">
     </com.android.settingslib.RestrictedPreference>
+    -->
 
     <!-- Cross-listed item, if you change this, also change it in power_usage_summary.xml -->
     <com.android.settings.display.TimeoutListPreference
