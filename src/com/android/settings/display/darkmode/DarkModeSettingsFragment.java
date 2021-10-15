@@ -17,16 +17,25 @@ package com.android.settings.display.darkmode;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.settings.SettingsEnums;
+
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+
+import com.android.internal.util.custom.ThemeUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import java.util.List;
+
 /**
  * Settings screen for Dark UI Mode
  */
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class DarkModeSettingsFragment extends DashboardFragment {
+public class DarkModeSettingsFragment extends DashboardFragment implements
+        Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "DarkModeSettingsFragment";
     private DarkModeObserver mContentObserver;
@@ -34,12 +43,21 @@ public class DarkModeSettingsFragment extends DashboardFragment {
         updatePreferenceStates();
     };
 
+    private ThemeUtils mThemeUtils;
+    private ListPreference mDarkModeOverlayPreference;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         final Context context = getContext();
         mContentObserver = new DarkModeObserver(context);
+        mThemeUtils = new ThemeUtils(context);
+
+        final PreferenceScreen screen = getPreferenceScreen();
+        mDarkModeOverlayPreference = screen.findPreference(ThemeUtils.BACKGROUND_KEY);
+        mDarkModeOverlayPreference.setOnPreferenceChangeListener(this);
+        updateState(mDarkModeOverlayPreference);
     }
 
     @Override
@@ -54,6 +72,31 @@ public class DarkModeSettingsFragment extends DashboardFragment {
         super.onStop();
         // Stop listening for state changes.
         mContentObserver.unsubscribe();
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mDarkModeOverlayPreference) {
+            mThemeUtils.setOverlayEnabled(ThemeUtils.BACKGROUND_KEY, (String) newValue);
+            return true;
+        }
+        return false;
+    }
+
+    public void updateState(ListPreference preference) {
+        String currentPackageName = mThemeUtils.getOverlayInfos(preference.getKey()).stream()
+                .filter(info -> info.isEnabled())
+                .map(info -> info.packageName)
+                .findFirst()
+                .orElse("Default");
+
+        List<String> pkgs = mThemeUtils.getOverlayPackagesForCategory(preference.getKey());
+        List<String> labels = mThemeUtils.getLabels(preference.getKey());
+
+        preference.setEntries(labels.toArray(new String[labels.size()]));
+        preference.setEntryValues(pkgs.toArray(new String[pkgs.size()]));
+        preference.setValue("Default".equals(currentPackageName) ? pkgs.get(0) : currentPackageName);
+        preference.setSummary("Default".equals(currentPackageName) ? "Default" : labels.get(pkgs.indexOf(currentPackageName)));
     }
 
     @Override
