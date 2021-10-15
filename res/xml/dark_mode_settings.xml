@@ -37,6 +37,10 @@
         settings:controller="com.android.settings.display.darkmode.DarkModeScheduleSelectorController"
         settings:keywords="@string/keywords_dark_ui_mode"/>
 
+    <ListPreference
+        android:key="android.theme.customization.primary_background"
+        android:title="@string/style_dark_overlay_title"/>
+
     <Preference
         android:key="dark_theme_start_time"
         android:title="@string/night_display_start_time_title"

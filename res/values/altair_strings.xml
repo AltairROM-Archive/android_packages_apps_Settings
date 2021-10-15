@@ -16,4 +16,7 @@
 -->
 <resources>
 
+    <!-- Dark style -->
+    <string name="style_dark_overlay_title">Dark mode background</string>
+
 </resources>
