@@ -3459,6 +3459,7 @@
 
         <!-- This is the longest AndroidManifest.xml ever. -->
 
+        <!-- Begin Altair Settings -->
         <activity android:name=".Settings$AltairSettingsActivity"
             android:label="@string/altair_settings_activity_title"
 	        android:icon="@drawable/ic_homepage_altairsettings"
@@ -3483,7 +3484,7 @@
         </activity>
 
         <!-- Navbar -->
-        <!--<activity
+        <activity
             android:name="com.altair.settings.fragments.navbar.BackLongPress"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3491,9 +3492,8 @@
                 <action android:name="com.altair.settings.fragments.navbar.BackLongPress" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-
-        <!--<activity
+        </activity>
+        <activity
             android:name="com.altair.settings.fragments.navbar.BackDoubleTap"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3501,9 +3501,8 @@
                 <action android:name="com.altair.settings.fragments.navbar.BackDoubleTap" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-
-        <!--<activity
+        </activity>
+        -<activity
             android:name="com.altair.settings.fragments.navbar.HomeLongPress"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3511,9 +3510,8 @@
                 <action android:name="com.altair.settings.fragments.navbar.HomeLongPress" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-
-        <!--<activity
+        </activity>
+        <activity
             android:name="com.altair.settings.fragments.navbar.HomeDoubleTap"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3521,9 +3519,8 @@
                 <action android:name="com.altair.settings.fragments.navbar.HomeDoubleTap" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-
-        <!--<activity
+        </activity>
+        <activity
             android:name="com.altair.settings.fragments.navbar.AppSwitchLongPress"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3531,9 +3528,8 @@
                 <action android:name="com.altair.settings.fragments.navbar.AppSwitchLongPress" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-
-        <!--<activity
+        </activity>
+        <activity
             android:name="com.altair.settings.fragments.navbar.AppSwitchDoubleTap"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.MinWidth"
             android:label="@string/app_picker_dialog_title" >
@@ -3541,6 +3537,6 @@
                 <action android:name="com.altair.settings.fragments.navbar.AppSwitchDoubleTap" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
+        </activity>
     </application>
 </manifest>
