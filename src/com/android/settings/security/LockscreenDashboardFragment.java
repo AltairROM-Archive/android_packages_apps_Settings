@@ -25,10 +25,12 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
+/*
 import com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController;
 import com.android.settings.display.AmbientDisplayNotificationsPreferenceController;
 import com.android.settings.gestures.DoubleTapScreenPreferenceController;
 import com.android.settings.gestures.PickupGesturePreferenceController;
+*/
 import com.android.settings.notification.LockScreenNotificationPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.security.screenlock.LockScreenPreferenceController;
@@ -90,12 +92,14 @@ public class LockscreenDashboardFragment extends DashboardFragment
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        /*
         use(AmbientDisplayAlwaysOnPreferenceController.class)
                 .setConfig(getConfig(context))
                 .setCallback(this::updatePreferenceStates);
         use(AmbientDisplayNotificationsPreferenceController.class).setConfig(getConfig(context));
         use(DoubleTapScreenPreferenceController.class).setConfig(getConfig(context));
         use(PickupGesturePreferenceController.class).setConfig(getConfig(context));
+        */
     }
 
     @Override
@@ -123,12 +127,14 @@ public class LockscreenDashboardFragment extends DashboardFragment
         }
     }
 
+    /*
     private AmbientDisplayConfiguration getConfig(Context context) {
         if (mConfig == null) {
             mConfig = new AmbientDisplayConfiguration(context);
         }
         return mConfig;
     }
+    */
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
