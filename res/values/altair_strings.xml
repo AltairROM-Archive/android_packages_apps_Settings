@@ -26,4 +26,9 @@
 
     <!-- Dark style -->
     <string name="style_dark_overlay_title">Dark mode background</string>
+
+    <!-- Per-app volume -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Per-app volume control</string>
+    <string name="app_volume_summary">Show per-app volume button in volume dialog</string>
 </resources>
