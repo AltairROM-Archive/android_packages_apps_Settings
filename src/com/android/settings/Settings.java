@@ -324,4 +324,9 @@ public class Settings extends SettingsActivity {
      * Activity for AppDashboard.
      */
     public static class AppDashboardActivity extends SettingsActivity {}
+
+    /**
+     * Activities for AltairSettings
+     */
+    public static class AltairSettingsActivity extends SettingsActivity {}
 }

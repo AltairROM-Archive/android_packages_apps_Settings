@@ -41,6 +41,16 @@
         settings:controller="com.android.settings.connecteddevice.TopLevelConnectedDevicesPreferenceController"/>
 
     <com.android.settings.widget.HomepagePreference
+        android:fragment="com.altair.settings.AltairSettings"
+        android:icon="@drawable/ic_settings_altairsettings"
+        android:key="top_level_altair_settings"
+        android:order="-135"
+        android:title="@string/altair_settings_activity_title"
+        android:summary="@string/altair_settings_activity_summary"
+        settings:highlightableMenuKey="@string/menu_key_altair_settings"
+        settings:controller="com.altair.settings.TopLevelSettingsPreferenceController"/>
+
+    <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.applications.AppDashboardFragment"
         android:icon="@drawable/ic_apps"
         android:key="top_level_apps"

@@ -44,7 +44,16 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: [
+           "src/**/*.java",
+           "AltairSettings/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.altair.settings"],
+
+    resource_dirs: ["res",
+                    "AltairSettings/res"
+    ],
 
     static_libs: [
         "androidx-constraintlayout_constraintlayout",
@@ -77,6 +86,7 @@ android_library {
         "org.lineageos.platform.internal",
         "vendor.lineage.fastcharge-V1.0-java",
         "SystemUISharedLib",
+        "VendorSupport-preference",
     ],
 
     libs: [
@@ -84,6 +94,9 @@ android_library {
         "ims-common",
         "app-compat-annotations",
     ],
+    optimize: {
+        proguard_flags_files: ["proguard-core.flags"],
+    },
 }
 
 platform_compat_config {
