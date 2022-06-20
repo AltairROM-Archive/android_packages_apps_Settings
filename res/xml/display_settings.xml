@@ -60,6 +60,7 @@
     <PreferenceCategory
         android:title="@string/category_name_appearance">
 
+        <!--
         <com.android.settings.display.darkmode.DarkModePreference
             android:key="dark_ui_mode"
             android:title="@string/dark_ui_mode"
@@ -68,6 +69,7 @@
             settings:widgetLayout="@null"
             settings:controller="com.android.settings.display.DarkUIPreferenceController"
             settings:keywords="@string/keywords_dark_ui_mode"/>
+        -->
 
         <ListPreference
             android:key="android.theme.customization.font"
