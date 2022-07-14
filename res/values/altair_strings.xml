@@ -23,4 +23,7 @@
 
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
+
+    <!-- Dark style -->
+    <string name="style_dark_overlay_title">Dark mode background</string>
 </resources>
