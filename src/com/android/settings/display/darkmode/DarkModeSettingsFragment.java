@@ -19,6 +19,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.provider.Settings;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -55,13 +56,14 @@ public class DarkModeSettingsFragment extends DashboardFragment implements
 
     private ThemeUtils mThemeUtils;
     private ListPreference mDarkModeOverlayPreference;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final Context context = getContext();
-        mContentObserver = new DarkModeObserver(context);
-        mThemeUtils = new ThemeUtils(context);
+        mContext = getContext();
+        mContentObserver = new DarkModeObserver(mContext);
+        mThemeUtils = new ThemeUtils(mContext);
 
         final PreferenceScreen screen = getPreferenceScreen();
         mDarkModeOverlayPreference = screen.findPreference(ThemeUtils.DARK_THEME_KEY);
@@ -110,7 +112,8 @@ public class DarkModeSettingsFragment extends DashboardFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mDarkModeOverlayPreference) {
-            mThemeUtils.setOverlayEnabled(ThemeUtils.DARK_THEME_KEY, (String) newValue);
+            Settings.System.putString(mContext.getContentResolver(),
+                    Settings.System.DARK_MODE_BACKGROUND_THEME, (String) newValue);
             return true;
         }
         return false;
