@@ -64,6 +64,8 @@
 
         <!-- For slice view in settings -->
         <item name="sliceViewStyle">@style/Widget.SliceView.Settings</item>
+
+        <item name="android:colorControlNormal">@color/color_control_normal</item>
     </style>
 
     <!-- Variant of the settings theme with no action bar. -->
