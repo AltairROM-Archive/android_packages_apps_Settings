@@ -27,8 +27,23 @@ public class MonetUtils {
     public static final String KEY_MONET_TINT_SURFACE = "monet_engine_tint_surface";
     public static final String KEY_MONET_ACCURATE_SHADES = "monet_engine_accurate_shades";
     public static final String KEY_MONET_RICHER_COLORS = "monet_engine_richer_colors";
+    public static final String KEY_MONET_CHROMA_FACTOR = "monet_engine_chroma_factor";
+    public static final String KEY_MONET_WHITE_LUMINANCE = "monet_engine_white_luminance";
+    public static final String KEY_MONET_LINEAR_LIGHTNESS = "monet_engine_linear_lightness";
 
     public static final int ACCENT_COLOR_DISABLED = 0;
+    public static final boolean SURFACE_TINT_DEFAULT = true;
+    public static final boolean ACCURATE_SHADES_DEFAULT = true;
+    public static final boolean RICHER_COLORS_DEFAULT = false;
+    public static final boolean LINEAR_LIGHTNESS_DEFAULT = false;
+
+    public static final int CHROMA_FACTOR_DEFAULT = 100;
+    public static final int CHROMA_FACTOR_MIN = 0;
+    public static final int CHROMA_FACTOR_MAX = 1000;
+
+    public static final int WHITE_LUMINANCE_DEFAULT = 425;
+    public static final int WHITE_LUMINANCE_MIN = 0;
+    public static final int WHITE_LUMINANCE_MAX = 400;
 
     private Context mContext;
 
@@ -67,7 +82,7 @@ public class MonetUtils {
 
     // Returns true if accent color is set, false if not.
     public boolean isAccentColorSet() {
-        return getAccentColor() != 0;
+        return getAccentColor() != ACCENT_COLOR_DISABLED;
     }
 
     // Returns the current accent color.
@@ -83,7 +98,7 @@ public class MonetUtils {
 
     // Returns true if surface color tinting is enabled, false if not.
     public boolean isSurfaceTintEnabled() {
-        return getBoolean(KEY_MONET_TINT_SURFACE, true);
+        return getBoolean(KEY_MONET_TINT_SURFACE, SURFACE_TINT_DEFAULT);
     }
 
     // Enables or disables surface color tinting.
@@ -93,7 +108,7 @@ public class MonetUtils {
 
     // Returns true if accurate color shading is enabled, false if not.
     public boolean isAccurateShadesEnabled() {
-        return getBoolean(KEY_MONET_ACCURATE_SHADES, true);
+        return getBoolean(KEY_MONET_ACCURATE_SHADES, ACCURATE_SHADES_DEFAULT);
     }
 
     // Enables or disables accurate color shading.
@@ -103,11 +118,55 @@ public class MonetUtils {
 
     // Returns true if richer colors are enabled, false if not.
     public boolean isRicherColorsEnabled() {
-        return getBoolean(KEY_MONET_RICHER_COLORS, false);
+        return getBoolean(KEY_MONET_RICHER_COLORS, RICHER_COLORS_DEFAULT);
     }
 
     // Enables or disables richer colors.
     public void setRicherColorsEnabled(boolean enable) {
         putBoolean(KEY_MONET_RICHER_COLORS, enable);
+    }
+
+    // Returns the current chroma factor value.
+    public int getChromaFactor() {
+        return getInt(KEY_MONET_CHROMA_FACTOR, CHROMA_FACTOR_DEFAULT);
+    }
+
+    // Sets the chroma factor value. Value cannot be set higher than CHROMA_FACTOR_MAX or lower
+    // than CHROMA_FACTOR_MIN.
+    public void setChromaFactor(int value) {
+        if (value < CHROMA_FACTOR_MIN) {
+            putInt(KEY_MONET_CHROMA_FACTOR, CHROMA_FACTOR_MIN);
+        } else if (value > CHROMA_FACTOR_MAX) {
+            putInt(KEY_MONET_CHROMA_FACTOR, CHROMA_FACTOR_MAX);
+        } else {
+            putInt(KEY_MONET_CHROMA_FACTOR, value);
+        }
+    }
+
+    // Returns the current white luminance value.
+    public int getWhiteLuminance() {
+        return getInt(KEY_MONET_WHITE_LUMINANCE, WHITE_LUMINANCE_DEFAULT);
+    }
+
+    // Sets the white luminance value. Value cannot be set higher than WHITE_LUMINANCE_MAX or lower
+    // than WHITE_LUMINANCE_MIN.
+    public void setWhiteLuminance(int value) {
+        if (value < WHITE_LUMINANCE_MIN) {
+            putInt(KEY_MONET_WHITE_LUMINANCE, WHITE_LUMINANCE_MIN);
+        } else if (value > WHITE_LUMINANCE_MAX) {
+            putInt(KEY_MONET_WHITE_LUMINANCE, WHITE_LUMINANCE_MAX);
+        } else {
+            putInt(KEY_MONET_WHITE_LUMINANCE, value);
+        }
+    }
+
+    // Returns true if linear lightness is enabled, false if not.
+    public boolean isLinearLightnessEnabled() {
+        return getBoolean(KEY_MONET_RICHER_COLORS, LINEAR_LIGHTNESS_DEFAULT);
+    }
+
+    // Enables or disables linear lightness.
+    public void setLinearLightnessEnabled(boolean enable) {
+        putBoolean(KEY_MONET_LINEAR_LIGHTNESS, enable);
     }
 }
